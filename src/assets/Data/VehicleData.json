@@ -1,0 +1,138 @@
+[
+
+    {
+        "id": 1,
+        "plateNum": "ABC-123",
+        "owner": "Ahmed Hassan",
+        "location": "Cairo",
+        "violations": "Stolen",
+        "status": "Wanted"
+    },
+
+    {
+        "id": 2,
+        "plateNum": "XYZ-456",
+        "owner": "Mohamed Ali",
+        "location": "Alexandria",
+        "violations": "Expired License",
+        "status": "Impounded"
+    },
+
+    {
+        "id": 3,
+        "plateNum": "DEF-789",
+        "owner": "Youssef Ahmed",
+        "location": "Giza",
+        "violations": "Unpaid Fines",
+        "status": "Wanted"
+    },
+
+    {
+        "id": 4,
+        "plateNum": "LMN-321",
+        "owner": "Karim Mohamed",
+        "location": "Mansoura",
+        "violations": "Illegal Parking",
+        "status": "Impounded"
+    },
+
+    {
+        "id": 5,
+        "plateNum": "QRS-654",
+        "owner": "Omar Khaled",
+        "location": "Tanta",
+        "violations": "Hit and Run",
+        "status": "Wanted"
+    },
+
+    {
+        "id": 6,
+        "plateNum": "GHI-987",
+        "owner": "Mostafa Ibrahim",
+        "location": "Ismailia",
+        "violations": "Fake License Plate",
+        "status": "Impounded"
+    },
+
+    {
+        "id": 7,
+        "plateNum": "JKL-258",
+        "owner": "Walid Said",
+        "location": "Fayoum",
+        "violations": "Reckless Driving",
+        "status": "Wanted"
+    },
+
+    {
+        "id": 8,
+        "plateNum": "MNO-369",
+        "owner": "Mahmoud Tarek",
+        "location": "Suez",
+        "violations": "Speeding",
+        "status": "Impounded"
+    },
+
+    {
+        "id": 9,
+        "plateNum": "PQR-741",
+        "owner": "Ibrahim Khalil",
+        "location": "Aswan",
+        "violations": "DUI (Driving Under Influence)",
+        "status": "Wanted"
+    },
+
+    {
+        "id": 10,
+        "plateNum": "STU-852",
+        "owner": "Hassan Omar",
+        "location": "Luxor",
+        "violations": "Insurance Expired",
+        "status": "Impounded"
+    },
+
+    {
+        "id": 11,
+        "plateNum": "VWX-963",
+        "owner": "Tarek Hany",
+        "location": "Port Said",
+        "violations": "Vehicle Smuggling",
+        "status": "Wanted"
+    },
+
+    {
+        "id": 12,
+        "plateNum": "YZA-159",
+        "owner": "Fadi Samir",
+        "location": "Hurghada",
+        "violations": "Modified Exhaust System",
+        "status": "Impounded"
+    },
+
+    {
+        "id": 13,
+        "plateNum": "BCD-753",
+        "owner": "Ayman Salah",
+        "location": "Sharm El Sheikh",
+        "violations": "Expired Inspection Certificate",
+        "status": "Wanted"
+    },
+
+    {
+        "id": 14,
+        "plateNum": "EFG-684",
+        "owner": "Sameh Nabil",
+        "location": "Minya",
+        "violations": "No License Plate",
+        "status": "Impounded"
+    },
+
+    {
+        "id": 15,
+        "plateNum": "HIJ-275",
+        "owner": "Adel Mahmoud",
+        "location": "Beni Suef",
+        "violations": "Tinted Windows Violation",
+        "status": "Wanted"
+    }
+
+]

@@ -1,0 +1,257 @@
+{
+
+    "home": {
+
+        "statisticsData": [
+
+            {"id": 1, "title": "totalViolationsWord", "rate": 12.5, "rateUp": true, "num": 2547},
+            {"id": 2, "title": "detectedViolationsWord", "rate": 8.2, "rateUp": true, "num": 1923},
+            {"id": 3, "title": "underInvestigationWord", "rate": 3.1, "rateUp": false, "num": 624}
+
+        ],
+
+        "pieData": [65, 35],
+
+        "barData": {
+            "correct": [80, 60, 75, 85, 90, 70],
+            "false": [20, 40, 25, 15, 10, 30]
+        },
+
+        "lineData": [50, 60, 80, 90, 70, 60]
+
+    },
+
+    "officers": [
+
+        {
+            "id": 1,
+            "name": "Omar Khaled",
+            "location": "Zagazig",
+            "rank": "Molemn",
+            "violations": 45,
+            "status": "Online"
+        },
+
+        {
+            "id": 2,
+            "name": "Ahmed Ali",
+            "location": "Cairo",
+            "rank": "Sergeant",
+            "violations": 20,
+            "status": "Offline"
+        },
+
+        {
+            "id": 3,
+            "name": "Mohamed Hassan",
+            "location": "Alexandria",
+            "rank": "Lieutenant",
+            "violations": 5,
+            "status": "Online"
+        },
+
+        {
+            "id": 4,
+            "name": "Mostafa Ibrahim",
+            "location": "Giza",
+            "rank": "Captain",
+            "violations": 12,
+            "status": "Online"
+        },
+
+        {
+            "id": 5,
+            "name": "Hassan Mahmoud",
+            "location": "Mansoura",
+            "rank": "Major",
+            "violations": 8,
+            "status": "Offline"
+        },
+
+        {
+            "id": 6,
+            "name": "Youssef Adel",
+            "location": "Ismailia",
+            "rank": "Colonel",
+            "violations": 25,
+            "status": "Online"
+        },
+
+        {
+            "id": 7,
+            "name": "Karim Salah",
+            "location": "Suez",
+            "rank": "Brigadier",
+            "violations": 30,
+            "status": "Offline"
+        },
+
+        {
+            "id": 8,
+            "name": "Tamer Ahmed",
+            "location": "Port Said",
+            "rank": "General",
+            "violations": 15,
+            "status": "Online"
+        },
+
+        {
+            "id": 9,
+            "name": "Samir Hossam",
+            "location": "Fayoum",
+            "rank": "Molemn",
+            "violations": 50,
+            "status": "Offline"
+        },
+
+        {
+            "id": 10,
+            "name": "Ali Farouk",
+            "location": "Tanta",
+            "rank": "Sergeant",
+            "violations": 18,
+            "status": "Online"
+        }
+
+    ],
+
+    "vehiclesData": [
+
+        {
+            "id": 1,
+            "plateNum": "ABC-123",
+            "owner": "Ahmed Hassan",
+            "location": "Cairo",
+            "violations": "Stolen",
+            "status": "Wanted"
+        },
+
+        {
+            "id": 2,
+            "plateNum": "XYZ-456",
+            "owner": "Mohamed Ali",
+            "location": "Alexandria",
+            "violations": "Expired License",
+            "status": "Impounded"
+        },
+
+        {
+            "id": 3,
+            "plateNum": "DEF-789",
+            "owner": "Youssef Ahmed",
+            "location": "Giza",
+            "violations": "Unpaid Fines",
+            "status": "Wanted"
+        },
+
+        {
+            "id": 4,
+            "plateNum": "LMN-321",
+            "owner": "Karim Mohamed",
+            "location": "Mansoura",
+            "violations": "Illegal Parking",
+            "status": "Impounded"
+        },
+
+        {
+            "id": 5,
+            "plateNum": "QRS-654",
+            "owner": "Omar Khaled",
+            "location": "Tanta",
+            "violations": "Hit and Run",
+            "status": "Wanted"
+        },
+
+        {
+            "id": 6,
+            "plateNum": "GHI-987",
+            "owner": "Mostafa Ibrahim",
+            "location": "Ismailia",
+            "violations": "Fake License Plate",
+            "status": "Impounded"
+        },
+
+        {
+            "id": 7,
+            "plateNum": "JKL-258",
+            "owner": "Walid Said",
+            "location": "Fayoum",
+            "violations": "Reckless Driving",
+            "status": "Wanted"
+        },
+
+        {
+            "id": 8,
+            "plateNum": "MNO-369",
+            "owner": "Mahmoud Tarek",
+            "location": "Suez",
+            "violations": "Speeding",
+            "status": "Impounded"
+        },
+
+        {
+            "id": 9,
+            "plateNum": "PQR-741",
+            "owner": "Ibrahim Khalil",
+            "location": "Aswan",
+            "violations": "DUI (Driving Under Influence)",
+            "status": "Wanted"
+        },
+
+        {
+            "id": 10,
+            "plateNum": "STU-852",
+            "owner": "Hassan Omar",
+            "location": "Luxor",
+            "violations": "Insurance Expired",
+            "status": "Impounded"
+        },
+
+        {
+            "id": 11,
+            "plateNum": "VWX-963",
+            "owner": "Tarek Hany",
+            "location": "Port Said",
+            "violations": "Vehicle Smuggling",
+            "status": "Wanted"
+        },
+
+        {
+            "id": 12,
+            "plateNum": "YZA-159",
+            "owner": "Fadi Samir",
+            "location": "Hurghada",
+            "violations": "Modified Exhaust System",
+            "status": "Impounded"
+        },
+
+        {
+            "id": 13,
+            "plateNum": "BCD-753",
+            "owner": "Ayman Salah",
+            "location": "Sharm El Sheikh",
+            "violations": "Expired Inspection Certificate",
+            "status": "Wanted"
+        },
+
+        {
+            "id": 14,
+            "plateNum": "EFG-684",
+            "owner": "Sameh Nabil",
+            "location": "Minya",
+            "violations": "No License Plate",
+            "status": "Impounded"
+        },
+
+        {
+            "id": 15,
+            "plateNum": "HIJ-275",
+            "owner": "Adel Mahmoud",
+            "location": "Beni Suef",
+            "violations": "Tinted Windows Violation",
+            "status": "Wanted"
+        }
+
+    ]
+
+}

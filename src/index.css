@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+:root{
+
+    --red-color: #ff0000;
+    --blue-color: #305FA2;
+    --gray-color: #adb5bd;
+    --salt-color: #F7F8FA;
+    --black-color: #2D2D2D;
+    --white-color: #FFFFFF;
+    --green-color: #70e000;
+    --gray-color-1: #dee2e6;
+    --gray-color-2: #6c757d;
+    --gray-color-3: #e9ecef;
+    --black-color-2: #383838;
+
+    --white-opacity-color: rgba(255, 255, 255, 0.75);
+
+}
+
+html[lang="en"] *,
+html[lang="en"] {
+
+    font-family: "Manrope", sans-serif;
+
+}
+
+html[lang="ar"] *,
+html[lang="ar"] {
+
+    font-family: "Cairo", sans-serif !important;
+
+}
+
+::-webkit-scrollbar {
+
+    width: 5px;
+    background-color: var(--white-color);
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background-color: var(--blue-color);
+
+}
+
+body{
+
+    width: 100%;
+    background-color: var(--salt-color);
+
+}
+
+.dashboard_width{
+
+    width: calc(100% - 18rem);
+
+}
+
+.page_height{
+
+    height: calc(100% - 4.375rem);
+
+}
+
+.active{
+
+    background-color: var(--blue-color);
+    color: var(--white-color);
+
+}
+
+.list_top{
+
+    top: calc(100% + 0.625rem);
+
+}
+
+.hidden_scroll{
+
+    &::-webkit-scrollbar{
+
+        display: none;
+
+    }
+
+}
+
+/* ====== responsive-style ====== */
+
+@media only screen and (max-width: 1120px){
+
+    .dashboard_width{
+
+        width: calc(100% - 7rem);
+
+    }
+
+}
+
+@media only screen and (max-width: 940px){
+
+    .dashboard_width{
+
+        width: 100%;
+
+    }
+
+}

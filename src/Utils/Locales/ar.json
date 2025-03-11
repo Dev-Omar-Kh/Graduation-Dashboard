@@ -1,0 +1,70 @@
+{
+
+    "homeWord": "الرئيسية",
+    "vehicleManagementWord": "إدارة المركبات",
+    "wantedVehicle": "المركبات المطلوبة",
+    "officersWord": "الضباط",
+    "violationReportsWord": "تقارير المخالفات",
+    "adultLogWord": "سجل التعديلات",
+    "settingWord": "الإعدادات",
+    "languageWord": "اللغة",
+    "arWord": "العربية",
+    "enWord": "الإنجليزية",
+
+    "searchWord": "بحث",
+
+    "vmSlogan": "إدارة ومراقبة المركبات",
+    "allLocationsWord": "جميع المواقع",
+    "allViolationsWord": "جميع المخالفات",
+    "allStatusWord": "جميع الحالات",
+
+    "plateNumWord": "رقم اللوحة",
+    "ownerNameWord": "اسم المالك",
+    "locationWord": "الموقع",
+    "violationWord": "المخالفة",
+    "statusWord": "الحالة",
+    "actionsWord": "الإجراءات",
+
+    "officersTitle": "إدارة الضباط",
+    "officersSlogan": "إدارة ومراقبة أنشطة الضباط",
+    "officerWord": "الضابط",
+    "rankWord": "الرتبة",
+    "allRanksWord": "جميع الرتب",
+
+    "totalViolationsWord": "إجمالي المخالفات",
+    "detectedViolationsWord": "المخالفات المضبوطة",
+    "underInvestigationWord": "قيد التحقيق",
+    "lastDaysWord": "آخر 30 يومًا",
+
+    "violationsDistributionWord": "توزيع المخالفات",
+    "reportAccuracyWord": "دقة التقارير",
+    "violationTrendsWord": "نسبة المخالفات",
+
+    "detectedWord": "تم الضبط",
+    "underDetectedWord": "قيد التحقيق",
+
+    "correctReportsWord": "تقارير صحيحة",
+    "falseReportsWord": "تقارير خاطئة",
+
+    "violationsWord": "المخالفات",
+
+    "janMonth": "يناير",
+    "febMonth": "فبراير",
+    "marMonth": "مارس",
+    "aprMonth": "أبريل",
+    "mayMonth": "مايو",
+    "junMonth": "يونيو",
+    "julMonth": "يوليو",
+    "augMonth": "أغسطس",
+    "sepMonth": "سبتمبر",
+    "octMonth": "أكتوبر",
+    "novMonth": "نوفمبر",
+    "decMonth": "ديسمبر",
+
+    "addOfficerWord": "إضافة ضابط",
+    "addVehicleWord": "إضافة مركبة",
+    "errorTableMsg": "خطأ في جلب البيانات",
+    "officersMatchedError": "لم يتم العثور على أي ضباط",
+    "vehiclesMatchedError": "لم يتم العثور على أي مركبات"
+
+}

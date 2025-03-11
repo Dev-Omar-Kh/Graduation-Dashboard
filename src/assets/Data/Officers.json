@@ -1,0 +1,93 @@
+[
+
+    {
+        "id": 1,
+        "name": "Omar Khaled",
+        "location": "Zagazig",
+        "rank": "Molemn",
+        "violations": 45,
+        "status": "Online"
+    },
+
+    {
+        "id": 2,
+        "name": "Ahmed Ali",
+        "location": "Cairo",
+        "rank": "Sergeant",
+        "violations": 20,
+        "status": "Offline"
+    },
+
+    {
+        "id": 3,
+        "name": "Mohamed Hassan",
+        "location": "Alexandria",
+        "rank": "Lieutenant",
+        "violations": 5,
+        "status": "Online"
+    },
+
+    {
+        "id": 4,
+        "name": "Mostafa Ibrahim",
+        "location": "Giza",
+        "rank": "Captain",
+        "violations": 12,
+        "status": "Online"
+    },
+
+    {
+        "id": 5,
+        "name": "Hassan Mahmoud",
+        "location": "Mansoura",
+        "rank": "Major",
+        "violations": 8,
+        "status": "Offline"
+    },
+
+    {
+        "id": 6,
+        "name": "Youssef Adel",
+        "location": "Ismailia",
+        "rank": "Colonel",
+        "violations": 25,
+        "status": "Online"
+    },
+
+    {
+        "id": 7,
+        "name": "Karim Salah",
+        "location": "Suez",
+        "rank": "Brigadier",
+        "violations": 30,
+        "status": "Offline"
+    },
+
+    {
+        "id": 8,
+        "name": "Tamer Ahmed",
+        "location": "Port Said",
+        "rank": "General",
+        "violations": 15,
+        "status": "Online"
+    },
+
+    {
+        "id": 9,
+        "name": "Samir Hossam",
+        "location": "Fayoum",
+        "rank": "Molemn",
+        "violations": 50,
+        "status": "Offline"
+    },
+
+    {
+        "id": 10,
+        "name": "Ali Farouk",
+        "location": "Tanta",
+        "rank": "Sergeant",
+        "violations": 18,
+        "status": "Online"
+    }
+
+]

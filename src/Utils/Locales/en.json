@@ -1,0 +1,70 @@
+{
+
+    "homeWord": "Home",
+    "vehicleManagementWord": "Vehicle Management",
+    "wantedVehicle": "Wanted Vehicle",
+    "officersWord": "Officers",
+    "violationReportsWord": "Violation Reports",
+    "adultLogWord": "Adult Log",
+    "settingWord": "Setting",
+    "languageWord": "Language",
+    "arWord": "Arabic",
+    "enWord": "English",
+
+    "searchWord": "Search",
+
+    "vmSlogan": "Manage and monitor vehicles",
+    "allLocationsWord": "All Locations",
+    "allViolationsWord": "All Violations",
+    "allStatusWord": "All Status",
+
+    "plateNumWord": "Plate Number",
+    "ownerNameWord": "Owner Name",
+    "locationWord": "Location",
+    "violationWord": "Violation",
+    "statusWord": "Status",
+    "actionsWord": "Actions",
+
+    "officersTitle": "Officers Management",
+    "officersSlogan": "Manage and monitor officer activities",
+    "officerWord": "Officer",
+    "rankWord": "Rank",
+    "allRanksWord": "All Ranks",
+
+    "totalViolationsWord": "Total Violations",
+    "detectedViolationsWord": "Detected Violations",
+    "underInvestigationWord": "Under Investigation",
+    "lastDaysWord": "Last 30 Days",
+
+    "violationsDistributionWord": "Violation Distribution",
+    "reportAccuracyWord": "Report Accuracy",
+    "violationTrendsWord": "Violation Trends",
+
+    "detectedWord": "Detected",
+    "underDetectedWord": "Under Detected",
+
+    "correctReportsWord": "Correct Reports",
+    "falseReportsWord": "False Reports",
+
+    "violationsWord": "Violations",
+
+    "janMonth": "Jan",
+    "febMonth": "Feb",
+    "marMonth": "Mar",
+    "aprMonth": "Apr",
+    "mayMonth": "May",
+    "junMonth": "Jun",
+    "julMonth": "Jul",
+    "augMonth": "Aug",
+    "sepMonth": "Sep",
+    "octMonth": "Oct",
+    "novMonth": "Nov",
+    "decMonth": "Dec",
+
+    "addOfficerWord": "Add Officer",
+    "addVehicleWord": "Add Vehicle",
+    "errorTableMsg": "Error on fetching data",
+    "officersMatchedError": "No Officers matched",
+    "vehiclesMatchedError": "No vehicles matched"
+
+}
