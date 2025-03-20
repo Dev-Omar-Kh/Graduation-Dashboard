@@ -23,6 +23,8 @@
     "locationWord": "Location",
     "violationWord": "Violation",
     "statusWord": "Status",
+    "detailsWord": "Details",
+    "expandWord": "Expand details",
     "actionsWord": "Actions",
 
     "officersTitle": "Officers Management",
@@ -65,6 +67,25 @@
     "addVehicleWord": "Add Vehicle",
     "errorTableMsg": "Error on fetching data",
     "officersMatchedError": "No Officers matched",
-    "vehiclesMatchedError": "No vehicles matched"
+    "vehiclesMatchedError": "No vehicles matched",
+
+    "vehicleDetails": "Vehicle Details",
+
+    "vehicleDataWord": "Vehicle Data",
+    "brandWord": "Brand",
+
+    "vehicleViolationWord": "Vehicle Violation",
+    "idWord": "ID",
+    "typeWord": "Type",
+    "dateWord": "Date",
+
+    "additionalNotesWord": "Additional Notes",
+
+    "viewProfileWord": "View Profile",
+    "profileWord": "Profile",
+
+    "addViolationWord": "Add Violation",
+
+    "noViolationsYet": "No Violations Recorded Yet"
 
 }

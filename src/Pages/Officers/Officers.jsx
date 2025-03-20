@@ -106,7 +106,7 @@ export default function Officers() {
             </div>
 
             <div className='
-                w-full px-2.5 rounded-md bg-[var(--white-color)] 
+                w-full rounded-md bg-[var(--white-color)] 
                 shadow-[0_0px_10px_var(--gray-color-3)] overflow-x-auto hidden_scroll
             '>
 
@@ -116,18 +116,37 @@ export default function Officers() {
 
                         <tr className="text-base text-[var(--black-color)] text-center">
 
-                            <th className="px-5 py-2.5">{t('officerWord')}</th>
-                            <th className="px-5 py-2.5">{t('locationWord')}</th>
-                            <th className="px-5 py-2.5">{t('rankWord')}</th>
-                            <th className="px-5 py-2.5">{t('violationsWord')}</th>
-                            <th className="px-5 py-2.5">{t('statusWord')}</th>
-                            <th className="px-5 py-2.5">{t('actionsWord')}</th>
+                            <th className="px-2.5 py-5 whitespace-nowrap">{t('officerWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('locationWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('rankWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('violationsWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('statusWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('profileWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('actionsWord')}</th>
 
                         </tr>
 
                     </thead>
 
-                    <tbody>
+                    <tbody className='p-10'>
 
                         {isLoading && <TableLoading />}
 
@@ -137,26 +156,59 @@ export default function Officers() {
                             filteredArray.map(officer => <tr key={officer.id} className='
                                 border-t border-solid border-[var(--gray-color-1)]
                                 text-base font-normal text-[var(--gray-color-2)] text-center
+                                duration-300 hover:bg-[var(--gray-opacity-color-3)] cursor-pointer
                             '>
 
-                                <td className='py-2.5'>{officer.name}</td>
-                                <td className='py-2.5'>{officer.location}</td>
-                                <td className='py-2.5'>{officer.rank}</td>
-                                <td className='py-2.5'>
-                                    <Link className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'>
-                                        <p>{officer.violations}</p>
+                                <td className='p-2.5 whitespace-nowrap'>{officer.name}</td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>{officer.city}</td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>{officer.rank}</td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>{officer.violations}</td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>
+                                    {officer.status === 'Online' && 
+                                        <div className='w-full flex items-center justify-center'>
+                                            <p className='
+                                                w-fit px-2 rounded-4xl bg-[var(--green-opacity-color)]
+                                                font-medium text-[var(--green-color)]
+                                            '>{officer.status}</p>
+                                        </div>
+                                    }
+                                    {officer.status === 'Offline' &&
+                                        <div className='w-full flex items-center justify-center'>
+                                            <p className='
+                                                w-fit px-2 rounded-4xl bg-[var(--gray-opacity-color-3)]
+                                                font-medium text-[var(--gray-color)]
+                                            '>{officer.status}</p>
+                                        </div>
+                                    }
+                                </td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>
+                                    <Link 
+                                        to={`profile/${officer.id}`}
+                                        className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'
+                                    >
+                                        <p>{t('viewProfileWord')}</p>
                                         <IoIosArrowForward className={`${i18n.language === 'ar' ? 'rotate-y-180' : ''}`} />
                                     </Link>
                                 </td>
-                                <td className='py-2.5'>
-                                    {officer.status === 'Online' && 
-                                        <p className='font-medium text-[var(--green-color)]'>{officer.status}</p>
-                                    }
-                                    {officer.status === 'Offline' &&
-                                        <p className='font-medium opacity-55'>{officer.status}</p>
-                                    }
-                                </td>
-                                <td className='py-2.5'>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>
                                     <div className='flex items-center justify-center gap-2.5'>
 
                                         <button className='

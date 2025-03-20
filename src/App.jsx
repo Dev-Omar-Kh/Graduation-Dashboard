@@ -7,14 +7,25 @@ import VehicleM from './Pages/Vehicle-Management/VehicleM';
 import { useTranslation } from 'react-i18next';
 import Login from './Authentication/Login';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import SubLayout from './Layouts/SubLayout';
+import VehicleDetails from './Pages/Vehicle-Management/VehicleDetails';
+import OfficerProfile from './Pages/Officers/OfficerProfile';
 
 const routes = createBrowserRouter([
 
     {path: '/', element: <MainLayout />, children: [
 
         {path: '/', element: <Home />},
-        {path: '/officers', element: <Officers />},
-        {path: '/V-Management', element: <VehicleM />},
+
+        {path: '/officers', element: <SubLayout />, children: [
+            {path: '/officers', element: <Officers />},
+            {path: '/officers/profile/:id', element: <OfficerProfile />},
+        ]},
+
+        {path: '/V-Management', element: <SubLayout />, children: [
+            {path: '/V-Management', element: <VehicleM />},
+            {path: '/V-Management/vehicle/:id', element: <VehicleDetails />}
+        ]},
 
     ]},
 

@@ -19,7 +19,7 @@ export default function VehicleM() {
     const {t, i18n} = useTranslation();
 
     // ====== get-officers-data ====== //
-    
+
     const getApiData = async() => {
         const {data} = await Axios.get(getAllVehicles);
         return data
@@ -75,7 +75,7 @@ export default function VehicleM() {
                     text-base text-[var(--white-color)] font-medium cursor-pointer
                 '>
                     <IoIosAddCircleOutline className='text-xl' />
-                    <p>{t('addVehicleWord')}</p>
+                    <p>{t('addViolationWord')}</p>
                 </Link>
 
             </div>
@@ -106,7 +106,7 @@ export default function VehicleM() {
             </div>
 
             <div className='
-                w-full px-2.5 rounded-md bg-[var(--white-color)] 
+                w-full rounded-md bg-[var(--white-color)] 
                 shadow-[0_0px_10px_var(--gray-color-3)] overflow-x-auto hidden_scroll
             '>
 
@@ -116,12 +116,27 @@ export default function VehicleM() {
 
                         <tr className="text-base text-[var(--black-color)] text-center">
 
-                            <th className="px-5 py-2.5">{t('plateNumWord')}</th>
-                            <th className="px-5 py-2.5">{t('ownerNameWord')}</th>
-                            <th className="px-5 py-2.5">{t('locationWord')}</th>
-                            <th className="px-5 py-2.5">{t('violationWord')}</th>
-                            <th className="px-5 py-2.5">{t('statusWord')}</th>
-                            <th className="px-5 py-2.5">{t('actionsWord')}</th>
+                            <th className="px-2.5 py-5 whitespace-nowrap">{t('plateNumWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('locationWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('violationWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('statusWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('detailsWord')}</th>
+                            <th className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
+                            `}>{t('actionsWord')}</th>
 
                         </tr>
 
@@ -137,26 +152,63 @@ export default function VehicleM() {
                             filteredArray.map(officer => <tr key={officer.id} className='
                                 border-t border-solid border-[var(--gray-color-1)]
                                 text-base font-normal text-[var(--gray-color-2)] text-center
+                                duration-300 hover:bg-[var(--salt-color)] cursor-pointer
                             '>
 
-                                <td className='py-2.5'>{officer.plateNum}</td>
-                                <td className='py-2.5'>{officer.owner}</td>
-                                <td className='py-2.5'>{officer.location}</td>
-                                <td className='py-2.5'>
-                                    <Link className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'>
-                                        <p>{officer.violations}</p>
+                                <td className='p-2.5 whitespace-nowrap'>{officer.plateNum}</td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>{officer.location}</td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>{officer.violations}</td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>
+                                    {officer.status === 'Wanted' && 
+                                        <div className='w-full flex items-center justify-center'>
+                                            <p className='
+                                                w-fit px-2 rounded-4xl bg-[var(--red-opacity-color)]
+                                                font-medium text-[var(--red-color)]
+                                            '>{officer.status}</p>
+                                        </div>
+                                    }
+                                    {officer.status === 'Impounded' &&
+                                        <div className='w-full flex items-center justify-center'>
+                                            <p className='
+                                                w-fit px-2 rounded-4xl bg-[var(--gray-opacity-color-3)]
+                                                font-medium text-[var(--gray-color)]
+                                            '>{officer.status}</p>
+                                        </div>
+                                    }
+                                    {officer.status === 'pending' &&
+                                        <div className='w-full flex items-center justify-center'>
+                                            <p className='
+                                                w-fit px-2 rounded-4xl bg-[var(--yellow-opacity-color)]
+                                                font-medium text-[var(--yellow-color)]
+                                            '>{officer.status}</p>
+                                        </div>
+                                    }
+                                </td>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>
+                                    <Link 
+                                        to={`vehicle/${officer.id}`}
+                                        className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'
+                                    >
+                                        <p>{t('expandWord')}</p>
                                         <IoIosArrowForward className={`${i18n.language === 'ar' ? 'rotate-y-180' : ''}`} />
                                     </Link>
                                 </td>
-                                <td className='py-2.5'>
-                                    {officer.status === 'Wanted' && 
-                                        <p className='font-medium text-[var(--red-color)]'>{officer.status}</p>
-                                    }
-                                    {officer.status === 'Impounded' &&
-                                        <p className='font-medium opacity-55'>{officer.status}</p>
-                                    }
-                                </td>
-                                <td className='py-2.5'>
+                                <td className={`
+                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                `}>
                                     <div className='flex items-center justify-center gap-2.5'>
 
                                         <button className='

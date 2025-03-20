@@ -29,6 +29,8 @@
     "officersSlogan": "إدارة ومراقبة أنشطة الضباط",
     "officerWord": "الضابط",
     "rankWord": "الرتبة",
+    "detailsWord": "التفاصيل",
+    "expandWord": "عرض التفاصيل",
     "allRanksWord": "جميع الرتب",
 
     "totalViolationsWord": "إجمالي المخالفات",
@@ -65,6 +67,25 @@
     "addVehicleWord": "إضافة مركبة",
     "errorTableMsg": "خطأ في جلب البيانات",
     "officersMatchedError": "لم يتم العثور على أي ضباط",
-    "vehiclesMatchedError": "لم يتم العثور على أي مركبات"
+    "vehiclesMatchedError": "لم يتم العثور على أي مركبات",
+
+    "vehicleDetails": "تفاصيل المركبة",
+
+    "vehicleDataWord": "بيانات المركبة",
+    "brandWord": "العلامة التجارية",
+
+    "vehicleViolationWord": "مخالفة المركبة",
+    "idWord": "المعرف",
+    "typeWord": "النوع",
+    "dateWord": "التاريخ",
+
+    "additionalNotesWord": "ملاحظات إضافية",
+
+    "viewProfileWord": "عرض الملف الشخصي",
+    "profileWord": "الملف الشخصي",
+
+    "addViolationWord": "اضف مخالفة",
+
+    "noViolationsYet": "لا توجد مخالفات مسجلة حتى الآن"
 
 }

@@ -4,7 +4,7 @@ import errorSVG from '../../assets/JSON/wrong.json';
 import Lottie from 'lottie-react';
 import { useTranslation } from 'react-i18next';
 
-export default function StatisticError() {
+export default function FullError() {
 
     const {t} = useTranslation();
 

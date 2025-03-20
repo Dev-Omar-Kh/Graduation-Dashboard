@@ -17,7 +17,7 @@ import { Axios, getAllHomeData } from '../../API/API';
 import { useQuery } from '@tanstack/react-query';
 import StatisticLoading from './StatisticLoading';
 import ChartsLoading from './ChartsLoading';
-import StatisticError from './StatisticError';
+import FullError from './../../Components/Error/FullError';
 
 ChartJS.register(
     CategoryScale,
@@ -45,16 +45,6 @@ export default function Home() {
     const { data, error, isLoading } = useQuery({queryKey: ["getAllHomeData"], queryFn: getApiData});
 
     console.log(data);
-
-    // ====== statistics-data ====== //
-
-    // const statisticsData = [
-
-    //     {id: 1, title: 'totalViolationsWord', rate: 12.5, rateUp: true, num: 2547},
-    //     {id: 2, title: 'detectedViolationsWord', rate: 8.2, rateUp: true, num: 1923},
-    //     {id: 3, title: 'underInvestigationWord', rate: 3.1, rateUp: false, num: 624}
-
-    // ];
 
     // ====== charts-data ====== //
 
@@ -115,7 +105,7 @@ export default function Home() {
 
         <section className={`w-full ${error ? 'h-full' : ''} flex flex-col gap-5`}>
 
-            {!isLoading && error && <StatisticError />}
+            {!isLoading && error && <FullError />}
 
             {!error && <div className='w-full grid grid-cols-3 gap-5 max-[880px]:grid-cols-2 max-[610px]:grid-cols-1'>
 
