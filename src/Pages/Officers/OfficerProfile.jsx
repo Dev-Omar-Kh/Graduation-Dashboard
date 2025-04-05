@@ -11,7 +11,7 @@ import { IoBanSharp } from 'react-icons/io5';
 import { FiEdit } from 'react-icons/fi';
 import ProfileLoading from './ProfileLoading';
 import FullError from '../../Components/Error/FullError';
-import WarnPopUp from '../../components/Pop-Up/WarnPopUp';
+import WarnPopUp from '../../Components/Pop-Up/WarnPopUp';
 
 import officerImg from '../../assets/Images/officer.jpg';
 import warningSVG from '../../assets/JSON/warning.json';
