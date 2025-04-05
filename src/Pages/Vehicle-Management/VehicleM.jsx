@@ -10,7 +10,7 @@ import { Axios, getAllVehicles } from '../../API/API';
 import { useQuery } from '@tanstack/react-query';
 import TableError from '../../Components/Tables-Status/TableError';
 import TableLoading from '../../Components/Tables-Status/TableLoading';
-import WarnPopUp from '../../components/Pop-Up/WarnPopUp';
+import WarnPopUp from '../../Components/Pop-Up/WarnPopUp';
 
 import warningSVG from '../../assets/JSON/warning.json';
 import wrongSVG from '../../assets/JSON/wrong.json';
