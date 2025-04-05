@@ -17,7 +17,7 @@ export default function RowDetails({ title, content, link}) {
             <div className='w-full flex items-center justify-between flex-wrap gap-2.5'>
                 <p className='text-base font-medium text-[var(--gray-color-2)]'>{t(content)}</p>
                 {link && <Link 
-                    to={`/officers/profile/${link}`} 
+                    to={link} 
                     className='rounded-md text-[var(--blue-color)] flex items-center gap-1 text-sm'
                 >
                     <p>{t('viewProfileWord')}</p>

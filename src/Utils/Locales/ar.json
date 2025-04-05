@@ -1,10 +1,10 @@
 {
 
     "homeWord": "الرئيسية",
-    "vehicleManagementWord": "إدارة المركبات",
+    "vehicleManagementWord": "إدارة المخالفات",
     "wantedVehicle": "المركبات المطلوبة",
     "officersWord": "الضباط",
-    "violationReportsWord": "تقارير المخالفات",
+    "violationReportsWord": "تقارير الضباط",
     "adultLogWord": "سجل التعديلات",
     "settingWord": "الإعدادات",
     "languageWord": "اللغة",
@@ -69,7 +69,7 @@
     "officersMatchedError": "لم يتم العثور على أي ضباط",
     "vehiclesMatchedError": "لم يتم العثور على أي مركبات",
 
-    "vehicleDetails": "تفاصيل المركبة",
+    "vehicleDetails": "تفاصيل المخالفة",
 
     "vehicleDataWord": "بيانات المركبة",
     "brandWord": "العلامة التجارية",
@@ -83,9 +83,65 @@
 
     "viewProfileWord": "عرض الملف الشخصي",
     "profileWord": "الملف الشخصي",
+    "officerProfileWord": "ملف الضابط",
 
     "addViolationWord": "اضف مخالفة",
 
-    "noViolationsYet": "لا توجد مخالفات مسجلة حتى الآن"
+    "noViolationsYet": "لا توجد مخالفات مسجلة حتى الآن",
 
+    "badgeNum": "رقم الشارة",
+    "usernameWord": "اسم المستخدم",
+    "activeCasesWord": "القضايا النشطة",
+    "casesSolvedWord": "القضايا المحلولة",
+    "pendingCases": "القضايا المعلقة",
+
+    "reportsViewWord": "نظرة عامة على التقارير",
+    "reportSubTitle": "إدارة ومتابعة تقارير الضباط",
+
+    "newFirstWord": "الاحدث اولا",
+    "oldFirstWord": "الاقدم اولا",
+    "allReportsWord": "كل التقارير",
+
+    "titleWord": "العنوان",
+    "priorityWord": "الأولوية",
+    "reviewedWord": "تمت المراجعة",
+    "unreviewedWord": "لم تتم المراجعة",
+
+    "reportDetailsWord": "تفاصيل التقرير",
+    "reportInfoWord": "معلومات التقرير",
+
+    "officerInChargeWord": "الضابط المسؤول",
+    "reportWord": "التقرير",
+
+    "ownerDetails": "تفاصيل المالك",
+    "banVehicleTitle": "حذف المخالفة",
+    "banVehicleMessage": "هل أنت متأكد أنك تريد حذف هذه المخالفة؟ لا يمكن التراجع عن هذا الإجراء.",
+    "banOfficerTitle": "حظر الضابط",
+    "banOfficerMessage": "هل أنت متأكد أنك تريد حظر هذا الضابط؟ لا يمكن التراجع عن هذا الإجراء.",
+    "banReportTitle": "حذف التقرير",
+    "banReportMessage": "هل أنت متأكد أنك تريد حذف هذا التقرير؟ لا يمكن التراجع عن هذا الإجراء.",
+    "cancelWord": "إلغاء",
+    "confirmWord": "تأكيد",
+
+    "ownerNameAr": "اسم المالك",
+    "ownerNameEn": "الاسم بالإنجليزية",
+    "nationalId": "الرقم القومي",
+    "nationality": "الجنسية",
+    "issueDate": "تاريخ الإصدار",
+    "expiryDate": "تاريخ الانتهاء",
+    "trafficUnit": "وحدة المرور",
+    "licenseNumber": "رقم الرخصة",
+    "vehicleType": "نوع المركبة",
+    "plateNumber": "رقم اللوحة",
+    "inspectionDate": "تاريخ الفحص",
+    "vehicleLicenseNumber": "رقم رخصة المركبة",
+    "Driving License": "رخصة القيادة",
+    "Vehicle License": "رخصة المركبة",
+    "educationalQualification": "المؤهل التعليمي",
+    "addressWord": "العنوان",
+    "trafficDepartment": "وحدة المرور",
+    "carColor": "لون المركبة",
+    "glassType": "نوع الزجاج",
+    "chassisNumber": "رقم الشاسي",
+    "engineNumber": "رقم المحرك"
 }

@@ -10,6 +10,7 @@ import { Axios, getAllVehicles } from '../../API/API';
 import { useQuery } from '@tanstack/react-query';
 import TableError from '../../Components/Tables-Status/TableError';
 import TableLoading from '../../Components/Tables-Status/TableLoading';
+import WarnPopUp from '../../components/Pop-Up/WarnPopUp';
 
 import warningSVG from '../../assets/JSON/warning.json';
 import wrongSVG from '../../assets/JSON/wrong.json';
@@ -17,6 +18,10 @@ import wrongSVG from '../../assets/JSON/wrong.json';
 export default function VehicleM() {
 
     const {t, i18n} = useTranslation();
+
+    // ====== modal-state ====== //
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedVehicle, setSelectedVehicle] = useState(null);
 
     // ====== get-officers-data ====== //
 
@@ -59,7 +64,33 @@ export default function VehicleM() {
 
     }, [filters, data]);
 
+    const handleBanClick = (vehicle) => {
+        setSelectedVehicle(vehicle);
+        setIsModalOpen(true);
+    };
+
+    const handleConfirmBan = () => {
+        if (selectedVehicle) {
+            // Your existing ban logic here
+            setIsModalOpen(false);
+            setSelectedVehicle(null);
+        }
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedVehicle(null);
+    };
+
     return <React.Fragment>
+
+        <WarnPopUp
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            onConfirm={handleConfirmBan}
+            title={t('banVehicle')}
+            message={t('banVehicleMessage')}
+        />
 
         <section className='w-full flex flex-col gap-5'>
 
@@ -217,11 +248,13 @@ export default function VehicleM() {
                                             hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
                                         '><FiEdit /></button>
 
-                                        <button className='
-                                            p-2.5 rounded-md bg-[var(--gray-color-3)]
-                                            text-[var(--red-color)] cursor-pointer duration-300
-                                            hover:bg-[var(--red-color)] hover:text-[var(--white-color)]
-                                        '><IoBanSharp /></button>
+                                        <button 
+                                            onClick={() => handleBanClick(officer)}
+                                            className='
+                                                p-2.5 rounded-md bg-[var(--gray-color-3)]
+                                                text-[var(--red-color)] cursor-pointer duration-300
+                                                hover:bg-[var(--red-color)] hover:text-[var(--white-color)]
+                                            '><IoBanSharp /></button>
 
                                     </div>
                                 </td>

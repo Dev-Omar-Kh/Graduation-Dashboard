@@ -28,7 +28,7 @@ const Animations = {
             opacity: 1,
             transition: { ...commonTransition, ...staggerTransition },
         },
-        exit: { opacity: 0, transition: commonTransition },
+        exit: { opacity: 0, transition: {...commonTransition} },
     },
 
     parentVariantsNoStagger: {
@@ -37,7 +37,7 @@ const Animations = {
             opacity: 1,
             transition: { ...commonTransition},
         },
-        exit: { opacity: 0, transition: commonTransition },
+        exit: { opacity: 0, transition: {...commonTransition} },
     },
 
     displayList: {
@@ -53,7 +53,13 @@ const Animations = {
 
     toTopVariants: {
         hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: commonTransition },
+        visible: { opacity: 1, y: 0, transition: {...commonTransition} },
+    },
+
+    scaleVariants: {
+        hidden: { scale: 0.9, opacity: 0 },
+        visible: { scale: 1, opacity: 1, transition: {...commonTransition} },
+        exit: { scale: 0.9, opacity: 0, transition: {...commonTransition} },
     },
 
 };

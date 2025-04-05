@@ -30,7 +30,11 @@ export default function VehicleDetails() {
             data: [
                 {title: "plateNumWord", det: data?.plateNum},
                 {title: "brandWord", det: data?.brand},
-                {title: "ownerNameWord", det: data?.ownerName},
+                {
+                    title: "ownerNameWord", 
+                    det: data?.vehicleOwner.name, 
+                    ownerId: `car-owner/${data?.vehicleOwner.id}`
+                },
                 {title: "locationWord", det: data?.licenseLocation}
             ]
         },
@@ -43,7 +47,11 @@ export default function VehicleDetails() {
                 {title: "typeWord", det: data?.violationType},
                 {title: "dateWord", det: data?.violationDate},
                 {title: "locationWord", det: data?.violationLocation},
-                {title: "officerWord", det: data?.violationOfficerData.name, "policeId": data?.violationOfficerData.id},
+                {
+                    title: "officerWord", 
+                    det: data?.violationOfficerData.name, 
+                    policeId: `/officers/profile/${data?.violationOfficerData.id}`
+                },
                 {title: "statusWord", det: data?.status}
             ]
         }
@@ -55,9 +63,9 @@ export default function VehicleDetails() {
         <section className={`w-full ${isError ? 'h-full' : ''} flex flex-col gap-5`}>
 
             <div className='w-full flex items-center gap-1'>
-                <Link to={'/V-Management'} className='text-[var(--gray-color-2)] font-medium'>Vehicle Management</Link>
+                <Link to={'/V-Management'} className='text-[var(--gray-color-2)] font-medium'>{t('vehicleManagementWord')}</Link>
                 <span className='text-2xl text-[var(--gray-color-2)] font-medium'>/</span>
-                <p className='text-[var(--black-color)] font-medium'>Vehicle Details</p>
+                <p className='text-[var(--black-color)] font-medium'>{t('vehicleDetails')}</p>
             </div>
 
             {isLoading && <DetailsLoading />}
@@ -79,7 +87,10 @@ export default function VehicleDetails() {
                     <div className='w-full grid grid-cols-2 gap-2.5 max-[800px]:grid-cols-1'>
 
                         {box.data.map((card, idx) => (
-                            <RowDetails key={idx} title={card.title} content={card.det} link={card.policeId ? card.policeId : null} />
+                            <RowDetails 
+                                key={idx} title={card.title} content={card.det} 
+                                link={card.policeId || card.ownerId ? card.policeId || card.ownerId : null} 
+                            />
                         ))}
 
                     </div>

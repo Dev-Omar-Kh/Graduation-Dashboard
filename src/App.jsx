@@ -10,6 +10,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import SubLayout from './Layouts/SubLayout';
 import VehicleDetails from './Pages/Vehicle-Management/VehicleDetails';
 import OfficerProfile from './Pages/Officers/OfficerProfile';
+import Reports from './Pages/Reports/Reports';
+import ReportDetails from './Pages/Reports/ReportDetails';
+import OwnerDetails from './Pages/Vehicle-Management/OwnerDetails';
 
 const routes = createBrowserRouter([
 
@@ -24,7 +27,13 @@ const routes = createBrowserRouter([
 
         {path: '/V-Management', element: <SubLayout />, children: [
             {path: '/V-Management', element: <VehicleM />},
-            {path: '/V-Management/vehicle/:id', element: <VehicleDetails />}
+            {path: '/V-Management/vehicle/:id', element: <VehicleDetails />},
+            {path: '/V-Management/vehicle/:id/car-owner/:ownerId', element: <OwnerDetails />}
+        ]},
+
+        {path: '/V-Reports', element: <SubLayout />, children: [
+            {path: '/V-Reports', element: <Reports />},
+            {path: '/V-Reports/report/:id', element: <ReportDetails />}
         ]},
 
     ]},

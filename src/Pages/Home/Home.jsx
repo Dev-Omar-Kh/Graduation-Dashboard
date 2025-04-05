@@ -11,6 +11,7 @@ import {
     ArcElement,
     PointElement,
     LineElement,
+    Filler,
 } from "chart.js";
 import { useTranslation } from 'react-i18next';
 import { Axios, getAllHomeData } from '../../API/API';
@@ -28,7 +29,8 @@ ChartJS.register(
     Legend,
     ArcElement,
     PointElement,
-    LineElement
+    LineElement,
+    Filler
 );
 
 export default function Home() {
@@ -44,7 +46,6 @@ export default function Home() {
 
     const { data, error, isLoading } = useQuery({queryKey: ["getAllHomeData"], queryFn: getApiData});
 
-    console.log(data);
 
     // ====== charts-data ====== //
 

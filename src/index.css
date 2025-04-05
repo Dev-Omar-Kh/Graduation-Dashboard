@@ -22,6 +22,7 @@
     --yellow-opacity-color: rgba(225, 185, 109, 0.1);
     --white-opacity-color: rgba(255, 255, 255, 0.75);
     --gray-opacity-color-3: rgba(233, 236, 239, 0.5);
+    --black-opacity-color: rgba(45, 45, 45, 0.95);
 
 }
 
@@ -97,6 +98,13 @@ body{
 .w_cont-200{
 
     width: calc(100% - 14.25rem);
+
+}
+
+.common-p{
+
+    padding-inline: 4.5%;
+    padding-block: 3.125rem;
 
 }
 
