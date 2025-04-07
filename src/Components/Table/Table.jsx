@@ -19,11 +19,11 @@ export default function Table ({
     return (
         <div className='w-full overflow-auto hidden_scroll'>
             <table className='w-full border-collapse'>
+
                 <thead>
-                    <tr className="
-                        text-base text-[var(--black-color)] text-center
-                        border-t border-solid border-[var(--gray-color-1)]
-                    ">
+
+                    <tr className="text-base text-[var(--black-color)] text-center">
+
                         {columns.map((column, index) => (
                             <th 
                                 key={index}
@@ -35,6 +35,7 @@ export default function Table ({
                                 {t(column)}
                             </th>
                         ))}
+
                         {actions && (
                             <th className={`
                                 ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
@@ -43,14 +44,19 @@ export default function Table ({
                                 {t('actionsWord')}
                             </th>
                         )}
+
                     </tr>
+
                 </thead>
 
                 <tbody>
+
                     {isLoading && <TableLoading />}
 
                     {!isLoading && !isError && data && data.length > 0 && (
+
                         data.map((item, index) => (
+
                             <tr 
                                 key={index} 
                                 className='
@@ -59,7 +65,9 @@ export default function Table ({
                                     duration-300 hover:bg-[var(--salt-color)] cursor-pointer
                                 '
                             >
+
                                 {renderRow(item)}
+
                                 {actions && (
                                     <td className={`
                                         ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
@@ -68,14 +76,19 @@ export default function Table ({
                                         {onActionClick(item)}
                                     </td>
                                 )}
+
                             </tr>
+
                         ))
+
                     )}
 
                     {!isLoading && !isError && data && data.length === 0 && (
                         <TableError isRed={false} icon={emptyIcon} msg={emptyMessage} />
                     )}
+
                 </tbody>
+
             </table>
         </div>
     );
