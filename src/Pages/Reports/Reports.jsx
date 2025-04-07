@@ -12,9 +12,9 @@ import { useQuery } from '@tanstack/react-query';
 import TableLoading from '../../Components/Tables-Status/TableLoading';
 import TableError from '../../Components/Tables-Status/TableError';
 import WarnPopUp from '../../Components/Pop-Up/WarnPopUp';
+import Table from '../../Components/Table/Table';
 
 import warningSVG from '../../assets/JSON/warning.json';
-import wrongSVG from '../../assets/JSON/wrong.json';
 
 export default function Reports() {
 
@@ -118,168 +118,111 @@ export default function Reports() {
                 shadow-[0_0px_10px_var(--gray-color-3)] overflow-x-auto hidden_scroll
             '>
 
-                <table className='w-full border-collapse'>
-
-                    <thead>
-
-                        <tr className="text-base text-[var(--black-color)] text-center">
-
-                            <th className="px-2.5 py-5 whitespace-nowrap">{t('titleWord')}</th>
-                            <th className={`
+                <Table
+                    columns={['titleWord', 'officerWord', 'dateWord', 'priorityWord', 'statusWord', 'detailsWord']}
+                    data={filteredArray}
+                    isLoading={isLoading}
+                    isError={error}
+                    emptyMessage="noReportsYet"
+                    emptyIcon={warningSVG}
+                    actions={true}
+                    renderRow={(report) => (
+                        <>
+                            <td className='p-2.5 whitespace-nowrap'>{report.title}</td>
+                            <td className={`
                                 ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                            `}>{t('officerWord')}</th>
-                            <th className={`
+                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                            `}>{report.officer.name.split(' ').slice(0, 2).join(' ')}</td>
+                            <td className={`
                                 ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                            `}>{t('dateWord')}</th>
-                            <th className={`
+                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                            `}>
+                                {report.date.split('T').join('/').split('/')[0]}
+                            </td>
+                            <td className={`
                                 ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                            `}>{t('priorityWord')}</th>
-                            <th className={`
-                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                            `}>{t('statusWord')}</th>
-                            <th className={`
-                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                            `}>{t('detailsWord')}</th>
-                            <th className={`
-                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                            `}>{t('actionsWord')}</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody className='p-10'>
-
-                        {isLoading && <TableLoading />}
-
-                        {!isLoading && error && <TableError isRed={true} icon={wrongSVG} msg={'errorTableMsg'} />}
-
-                        {!isLoading && !error && data &&  filteredArray && filteredArray.length > 0 && 
-                            filteredArray.map(report => <tr key={report.id} className='
-                                border-t border-solid border-[var(--gray-color-1)]
-                                text-base font-normal text-[var(--gray-color-2)] text-center
-                                duration-300 hover:bg-[var(--gray-opacity-color-3)] cursor-pointer
-                            '>
-
-                                <td className='p-2.5 whitespace-nowrap'>{report.title}</td>
-                                <td className={`
-                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                `}>{report.officer.name.split(' ').slice(0, 2).join(' ')}</td>
-                                <td className={`
-                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                `}>
-                                    {report.date.split('T').join('/').split('/')[0]}
-                                </td>
-                                <td className={`
-                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                `}>
-
-                                    {report.priority === 'medium' && 
-                                        <div className='w-full flex items-center justify-center'>
-                                            <p className='
-                                                w-fit px-2 rounded-4xl bg-[var(--yellow-opacity-color)]
-                                                font-medium text-[var(--yellow-color)]
-                                            '>{report.priority}</p>
-                                        </div>
-                                    }
-
-                                    {report.priority === 'high' && 
-                                        <div className='w-full flex items-center justify-center'>
-                                            <p className='
-                                                w-fit px-2 rounded-4xl bg-[var(--red-opacity-color)]
-                                                font-medium text-[var(--red-color)]
-                                            '>{report.priority}</p>
-                                        </div>
-                                    }
-
-                                    {report.priority === 'low' && 
-                                        <div className='w-full flex items-center justify-center'>
-                                            <p className='
-                                                w-fit px-2 rounded-4xl bg-[var(--gray-opacity-color-3)]
-                                                font-medium text-[var(--gray-color)]
-                                            '>{report.priority}</p>
-                                        </div>
-                                    }
-
-                                </td>
-                                <td className={`
-                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                `}>
-
-                                    {report.isRead && 
-                                        <div className='w-full flex items-center justify-center'>
-                                            <p className='
-                                                w-fit px-2 rounded-4xl bg-[var(--gray-opacity-color-3)]
-                                                font-medium text-[var(--gray-color)]
-                                            '>{t('reviewedWord')}</p>
-                                        </div>
-                                    }
-
-                                    {!report.isRead && 
-                                        <div className='w-full flex items-center justify-center'>
-                                            <p className='
-                                                w-fit px-2 rounded-4xl bg-[var(--green-opacity-color)]
-                                                font-medium text-[var(--green-color)]
-                                            '>{t('unreviewedWord')}</p>
-                                        </div>
-                                    }
-
-                                </td>
-                                <td className={`
-                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                `}>
-                                    <Link 
-                                        to={`report/${report.id}`}
-                                        className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'
-                                    >
-                                        <p>{t('expandWord')}</p>
-                                        <IoIosArrowForward className={`${i18n.language === 'ar' ? 'rotate-y-180' : ''}`} />
-                                    </Link>
-                                </td>
-                                <td className={`
-                                    ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                    border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                `}>
-                                    <div className='flex items-center justify-center gap-2.5'>
-
-                                        <button className='
-                                            p-2.5 rounded-md bg-[var(--gray-color-3)]
-                                            text-[var(--blue-color)] cursor-pointer duration-300
-                                            hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
-                                        '><FiEdit /></button>
-
-                                        <button 
-                                            onClick={() => handleBanClick(report)}
-                                            className='
-                                                p-2.5 rounded-md bg-[var(--gray-color-3)]
-                                                text-[var(--red-color)] cursor-pointer duration-300
-                                                hover:bg-[var(--red-color)] hover:text-[var(--white-color)]
-                                        '><IoBanSharp /></button>
-
+                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                            `}>
+                                {report.priority === 'high' && 
+                                    <div className='w-full flex items-center justify-center'>
+                                        <p className='
+                                            w-fit px-2 rounded-4xl bg-[var(--red-opacity-color)]
+                                            font-medium text-[var(--red-color)]
+                                        '>{report.priority}</p>
                                     </div>
-                                </td>
+                                }
+                                {report.priority === 'medium' &&
+                                    <div className='w-full flex items-center justify-center'>
+                                        <p className='
+                                            w-fit px-2 rounded-4xl bg-[var(--yellow-opacity-color)]
+                                            font-medium text-[var(--yellow-color)]
+                                        '>{report.priority}</p>
+                                    </div>
+                                }
+                                {report.priority === 'low' &&
+                                    <div className='w-full flex items-center justify-center'>
+                                        <p className='
+                                            w-fit px-2 rounded-4xl bg-[var(--gray-opacity-color-3)]
+                                            font-medium text-[var(--gray-color)]
+                                        '>{report.priority}</p>
+                                    </div>
+                                }
+                            </td>
+                            <td className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                            `}>
+                                {report.isRead && 
+                                    <div className='w-full flex items-center justify-center'>
+                                        <p className='
+                                            w-fit px-2 rounded-4xl bg-[var(--gray-opacity-color-3)]
+                                            font-medium text-[var(--gray-color)]
+                                        '>{t('reviewedWord')}</p>
+                                    </div>
+                                }
+                                {!report.isRead && 
+                                    <div className='w-full flex items-center justify-center'>
+                                        <p className='
+                                            w-fit px-2 rounded-4xl bg-[var(--green-opacity-color)]
+                                            font-medium text-[var(--green-color)]
+                                        '>{t('unreviewedWord')}</p>
+                                    </div>
+                                }
+                            </td>
+                            <td className={`
+                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                            `}>
+                                <Link 
+                                    to={`report/${report.id}`}
+                                    className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'
+                                >
+                                    <p>{t('expandWord')}</p>
+                                    <IoIosArrowForward className={`${i18n.language === 'ar' ? 'rotate-y-180' : ''}`} />
+                                </Link>
+                            </td>
+                        </>
+                    )}
+                    onActionClick={(report) => (
+                        <div className='flex items-center justify-center gap-2.5'>
 
-                            </tr>)
-                        }
+                            <button className='
+                                p-2.5 rounded-md bg-[var(--gray-color-3)]
+                                text-[var(--blue-color)] cursor-pointer duration-300
+                                hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
+                            '><FiEdit /></button>
 
-                        {!isLoading && !error && data && filteredArray && filteredArray.length === 0 &&
-                            <TableError isRed={false} icon={warningSVG} msg={'officersMatchedError'} />
-                        }
+                            <button 
+                                onClick={() => handleBanClick(report)}
+                                className='
+                                    p-2.5 rounded-md bg-[var(--gray-color-3)]
+                                    text-[var(--red-color)] cursor-pointer duration-300
+                                    hover:bg-[var(--red-color)] hover:text-[var(--white-color)]
+                            '><IoBanSharp /></button>
 
-                    </tbody>
-
-                </table>
+                        </div>
+                    )}
+                />
 
             </div>
 

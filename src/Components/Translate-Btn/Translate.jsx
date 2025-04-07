@@ -46,6 +46,7 @@ export default function Translate({setDisplayNan}) {
     const changeLanguage = (lang) => {
 
         i18n.changeLanguage(lang);
+        setDisplayNan(false);
         localStorage.setItem('language', lang);
 
         setTimeout(() => {
@@ -90,7 +91,7 @@ export default function Translate({setDisplayNan}) {
                     className='list_top left-0 w-full absolute rounded-md bg-[var(--gray-color-3)] overflow-hidden'
                 >
 
-                    {languagesData.map(language => <li key={language.id} onClick={() => setDisplayNan(false)} className={`
+                    {languagesData.map(language => <li key={language.id} className={`
                             w-full px-5 py-2.5 flex items-center gap-2.5 cursor-pointer duration-300 
                             max-[1120px]:justify-center max-[940px]:justify-start
                             text-[var(--gray-color-2)] hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]

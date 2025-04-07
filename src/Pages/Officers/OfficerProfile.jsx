@@ -5,13 +5,12 @@ import { IoIosAddCircleOutline, IoIosArrowForward } from 'react-icons/io';
 import { useTranslation } from 'react-i18next';
 import { Axios, getAllOfficers, getAllVehicles } from '../../API/API';
 import { useQuery } from '@tanstack/react-query';
-import TableLoading from '../../Components/Tables-Status/TableLoading';
-import TableError from '../../Components/Tables-Status/TableError';
 import { IoBanSharp } from 'react-icons/io5';
 import { FiEdit } from 'react-icons/fi';
 import ProfileLoading from './ProfileLoading';
 import FullError from '../../Components/Error/FullError';
 import WarnPopUp from '../../Components/Pop-Up/WarnPopUp';
+import Table from '../../Components/Table/Table';
 
 import officerImg from '../../assets/Images/officer.jpg';
 import warningSVG from '../../assets/JSON/warning.json';
@@ -166,143 +165,88 @@ export default function OfficerProfile() {
 
                         </div>
 
-                        <div className='w-full overflow-auto hidden_scroll'>
+                        <Table
+                            columns={['plateNumWord', 'locationWord', 'violationWord', 'statusWord', 'detailsWord']}
+                            data={violationsData.data}
+                            isLoading={violationsData.isLoading || officerRes.isLoading}
+                            isError={violationsData.isError || officerRes.isError}
+                            emptyMessage="noViolationsYet"
+                            emptyIcon={warningSVG}
+                            actions={true}
+                            renderRow={(officer) => (
+                                <>
+                                    <td className='p-2.5 whitespace-nowrap'>{officer.plateNum}</td>
+                                    <td className={`
+                                        ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                        border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                    `}>{officer.location}</td>
+                                    <td className={`
+                                        ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                        border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                    `}>{officer.violations}</td>
+                                    <td className={`
+                                        ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                        border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                    `}>
+                                        {officer.status === 'Wanted' && 
+                                            <div className='w-full flex items-center justify-center'>
+                                                <p className='
+                                                    w-fit px-2 rounded-4xl bg-[var(--red-opacity-color)]
+                                                    font-medium text-[var(--red-color)]
+                                                '>{officer.status}</p>
+                                            </div>
+                                        }
+                                        {officer.status === 'Impounded' &&
+                                            <div className='w-full flex items-center justify-center'>
+                                                <p className='
+                                                    w-fit px-2 rounded-4xl bg-[var(--gray-opacity-color-3)]
+                                                    font-medium text-[var(--gray-color)]
+                                                '>{officer.status}</p>
+                                            </div>
+                                        }
+                                        {officer.status === 'pending' &&
+                                            <div className='w-full flex items-center justify-center'>
+                                                <p className='
+                                                    w-fit px-2 rounded-4xl bg-[var(--yellow-opacity-color)]
+                                                    font-medium text-[var(--yellow-color)]
+                                                '>{officer.status}</p>
+                                            </div>
+                                        }
+                                    </td>
+                                    <td className={`
+                                        ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
+                                        border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
+                                    `}>
+                                        <Link 
+                                            to={`/V-Management/vehicle/${officer.id}`}
+                                            className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'
+                                        >
+                                            <p>{t('expandWord')}</p>
+                                            <IoIosArrowForward className={`${i18n.language === 'ar' ? 'rotate-y-180' : ''}`} />
+                                        </Link>
+                                    </td>
+                                </>
+                            )}
+                            onActionClick={(officer) => (
+                                <div className='flex items-center justify-center gap-2.5'>
 
-                            <table className='w-full border-collapse'>
+                                    <button className='
+                                        p-2.5 rounded-md bg-[var(--gray-color-3)]
+                                        text-[var(--blue-color)] cursor-pointer duration-300
+                                        hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
+                                    '><FiEdit /></button>
 
-                                <thead>
+                                    <button 
+                                        onClick={() => handleBanClick(officer)}
+                                        className='
+                                            p-2.5 rounded-md bg-[var(--gray-color-3)]
+                                            text-[var(--red-color)] cursor-pointer duration-300
+                                            hover:bg-[var(--red-color)] hover:text-[var(--white-color)]
+                                    '><IoBanSharp /></button>
 
-                                    <tr className="
-                                        text-base text-[var(--black-color)] text-center
-                                        border-t border-solid border-[var(--gray-color-1)]
-                                    ">
-
-                                        <th className="px-2.5 py-5 whitespace-nowrap">{t('plateNumWord')}</th>
-                                        <th className={`
-                                            ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                            border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                                        `}>{t('locationWord')}</th>
-                                        <th className={`
-                                            ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                            border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                                        `}>{t('violationWord')}</th>
-                                        <th className={`
-                                            ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                            border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                                        `}>{t('statusWord')}</th>
-                                        <th className={`
-                                            ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                            border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                                        `}>{t('detailsWord')}</th>
-                                        <th className={`
-                                            ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                            border-solid border-[var(--gray-color-1)] px-2.5 py-5 whitespace-nowrap
-                                        `}>{t('actionsWord')}</th>
-
-                                    </tr>
-
-                                </thead>
-
-                                <tbody>
-
-                                    {(violationsData.isLoading || officerRes.isLoading)  && <TableLoading />}
-
-                                    {(!violationsData.isLoading && !officerRes.isLoading) 
-                                    && (!violationsData.isError && !officerRes.isError) 
-                                    && (violationsData.data && officerRes.data) 
-                                    && violationsData.data.length > 0 &&
-                                        violationsData.data.map(officer => <tr key={officer.id} className='
-                                            border-t border-solid border-[var(--gray-color-1)]
-                                            text-base font-normal text-[var(--gray-color-2)] text-center
-                                            duration-300 hover:bg-[var(--salt-color)] cursor-pointer
-                                        '>
-
-                                            <td className='p-2.5 whitespace-nowrap'>{officer.plateNum}</td>
-                                            <td className={`
-                                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                            `}>{officer.location}</td>
-                                            <td className={`
-                                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                            `}>{officer.violations}</td>
-                                            <td className={`
-                                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                            `}>
-                                                {officer.status === 'Wanted' && 
-                                                    <div className='w-full flex items-center justify-center'>
-                                                        <p className='
-                                                            w-fit px-2 rounded-4xl bg-[var(--red-opacity-color)]
-                                                            font-medium text-[var(--red-color)]
-                                                        '>{officer.status}</p>
-                                                    </div>
-                                                }
-                                                {officer.status === 'Impounded' &&
-                                                    <div className='w-full flex items-center justify-center'>
-                                                        <p className='
-                                                            w-fit px-2 rounded-4xl bg-[var(--gray-opacity-color-3)]
-                                                            font-medium text-[var(--gray-color)]
-                                                        '>{officer.status}</p>
-                                                    </div>
-                                                }
-                                                {officer.status === 'pending' &&
-                                                    <div className='w-full flex items-center justify-center'>
-                                                        <p className='
-                                                            w-fit px-2 rounded-4xl bg-[var(--yellow-opacity-color)]
-                                                            font-medium text-[var(--yellow-color)]
-                                                        '>{officer.status}</p>
-                                                    </div>
-                                                }
-                                            </td>
-                                            <td className={`
-                                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                            `}>
-                                                <Link 
-                                                    to={`vehicle/${officer.id}`}
-                                                    className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'
-                                                >
-                                                    <p>{t('expandWord')}</p>
-                                                    <IoIosArrowForward className={`${i18n.language === 'ar' ? 'rotate-y-180' : ''}`} />
-                                                </Link>
-                                            </td>
-                                            <td className={`
-                                                ${i18n.language === 'en' ? 'border-l' : 'border-r'} 
-                                                border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
-                                            `}>
-                                                <div className='flex items-center justify-center gap-2.5'>
-
-                                                    <button className='
-                                                        p-2.5 rounded-md bg-[var(--gray-color-3)]
-                                                        text-[var(--blue-color)] cursor-pointer duration-300
-                                                        hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
-                                                    '><FiEdit /></button>
-
-                                                    <button 
-                                                        onClick={() => handleBanClick(officer)}
-                                                        className='
-                                                            p-2.5 rounded-md bg-[var(--gray-color-3)]
-                                                            text-[var(--red-color)] cursor-pointer duration-300
-                                                            hover:bg-[var(--red-color)] hover:text-[var(--white-color)]
-                                                    '><IoBanSharp /></button>
-
-                                                </div>
-                                            </td>
-
-                                        </tr>)
-                                    }
-
-                                    {!violationsData.isLoading && !violationsData.error && violationsData.data 
-                                    && violationsData.data.length === 0 && officerRes.data &&
-                                        <TableError isRed={false} icon={warningSVG} msg={'noViolationsYet'} />
-                                    }
-
-                                </tbody>
-
-                            </table>
-
-                        </div>
+                                </div>
+                            )}
+                        />
 
                     </div>
 

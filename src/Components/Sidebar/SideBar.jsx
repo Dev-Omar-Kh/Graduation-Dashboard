@@ -32,12 +32,6 @@ export default function SideBar({setDisplayNan}) {
             title: t('vehicleManagementWord')
         },
 
-        // {
-        //     id: 3, 
-        //     icon: <IoWarningOutline className='text-xl max-[1120px]:text-2xl max-[940px]:text-xl' />, 
-        //     link: '/W-Vehicle', 
-        //     title: t('wantedVehicle')
-        // },
         
         {
             id: 4, 
