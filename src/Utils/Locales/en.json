@@ -5,7 +5,7 @@
     "wantedVehicle": "Wanted Vehicle",
     "officersWord": "Officers",
     "violationReportsWord": "Officers Reports",
-    "adultLogWord": "Adult Log",
+    "auditLogWord": "Audit Logs",
     "settingWord": "Setting",
     "languageWord": "Language",
     "arWord": "Arabic",
@@ -144,7 +144,19 @@
     "carColor": "Car Color",
     "glassType": "Glass Type",
     "chassisNumber": "Chassis Number",
-    "engineNumber": "Engine Number"
+    "engineNumber": "Engine Number",
+
+    "auditLogsTitle": "Audit Logs Management",
+    "auditLogsSlogan": "Manage and monitor audit logs",
+
+    "performedByWord": "Performed By",
+    "actionWord": "Action",
+    "noAuditLogsYet": "No Audit Logs Recorded Yet",
     
+    "clearAuditLogWord": "Clear Audit Logs",
+    "clearAuditLogTitle": "Clear Audit Log",
+    "clearAuditLogMessage": "Are you sure you want to clear this audit log? This action cannot be undone.",
+
+    "roleWord": "Role"
 
 }

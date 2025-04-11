@@ -2,9 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import TableLoading from '../Tables-Status/TableLoading';
 import TableError from '../Tables-Status/TableError';
+import wrongIcon from '../../assets/JSON/wrong.json';
 
 export default function Table ({
     columns,
+    bTHeader = false,
     data,
     isLoading,
     isError,
@@ -22,7 +24,10 @@ export default function Table ({
 
                 <thead>
 
-                    <tr className="text-base text-[var(--black-color)] text-center">
+                    <tr className={`
+                        text-base text-[var(--black-color)] text-center
+                        ${bTHeader ? 'border-t border-solid border-[var(--gray-color-1)]' : ''}
+                    `}>
 
                         {columns.map((column, index) => (
                             <th 
@@ -52,6 +57,7 @@ export default function Table ({
                 <tbody>
 
                     {isLoading && <TableLoading />}
+                    {!isLoading && isError && <TableError isRed={true} icon={wrongIcon} msg={t('errorTableMsg')} />}
 
                     {!isLoading && !isError && data && data.length > 0 && (
 

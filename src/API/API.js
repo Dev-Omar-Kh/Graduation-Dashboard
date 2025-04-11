@@ -11,3 +11,4 @@ export const getAllOfficers = '/officers';
 export const getAllVehicles = '/vehiclesData';
 export const getAllReports = '/reports';
 export const getAllOwners = '/ownersData';
+export const getAllAdultLogs = '/logsData';

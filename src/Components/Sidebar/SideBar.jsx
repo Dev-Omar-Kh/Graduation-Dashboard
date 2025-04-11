@@ -51,7 +51,7 @@ export default function SideBar({setDisplayNan}) {
             id: 6, 
             icon: <LuClipboardList className='text-xl max-[1120px]:text-2xl max-[940px]:text-xl' />, 
             link: '/adult-logs', 
-            title: t('adultLogWord')
+            title: t('auditLogWord')
         },
 
         {

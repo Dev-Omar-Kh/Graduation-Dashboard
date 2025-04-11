@@ -143,5 +143,19 @@
     "carColor": "لون المركبة",
     "glassType": "نوع الزجاج",
     "chassisNumber": "رقم الشاسي",
-    "engineNumber": "رقم المحرك"
+    "engineNumber": "رقم المحرك",
+
+    "auditLogsTitle": "إدارة سجلات التعديلات",
+    "auditLogsSlogan": "إدارة ومراقبة سجلات التعديلات",
+
+    "performedByWord": "تم بواسطة",
+    "actionWord": "العملية",
+    "noAdultLogsYet": "لا توجد سجلات تعديلات مسجلة حتى الآن",
+
+    "clearAuditLogWord": "مسح سجلات التعديلات",
+    "clearAuditLogTitle": "مسح سجل التعديل",
+    "clearAuditLogMessage": "هل أنت متأكد أنك تريد حذف هذا السجل التعديلي؟ لا يمكن التراجع عن هذا الإجراء.",
+
+    "roleWord": "الدور"
+
 }

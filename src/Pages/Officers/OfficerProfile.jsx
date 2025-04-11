@@ -85,7 +85,7 @@ export default function OfficerProfile() {
             w-full flex flex-col gap-5
         `}>
 
-            <div className='w-full flex items-center gap-1'>
+            <div className='w-full flex flex-wrap items-center gap-1'>
                 <Link to={'/officers'} className='text-[var(--gray-color-2)] font-medium'>{t('officersTitle')}</Link>
                 <span className='text-2xl text-[var(--gray-color-2)] font-medium'>/</span>
                 <p className='text-[var(--black-color)] font-medium'>{t('officerProfileWord')}</p>
@@ -167,6 +167,7 @@ export default function OfficerProfile() {
 
                         <Table
                             columns={['plateNumWord', 'locationWord', 'violationWord', 'statusWord', 'detailsWord']}
+                            bTHeader={true}
                             data={violationsData.data}
                             isLoading={violationsData.isLoading || officerRes.isLoading}
                             isError={violationsData.isError || officerRes.isError}

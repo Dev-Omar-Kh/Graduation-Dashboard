@@ -62,7 +62,7 @@ export default function VehicleDetails() {
 
         <section className={`w-full ${isError ? 'h-full' : ''} flex flex-col gap-5`}>
 
-            <div className='w-full flex items-center gap-1'>
+            <div className='w-full flex flex-wrap items-center gap-1'>
                 <Link to={'/V-Management'} className='text-[var(--gray-color-2)] font-medium'>{t('vehicleManagementWord')}</Link>
                 <span className='text-2xl text-[var(--gray-color-2)] font-medium'>/</span>
                 <p className='text-[var(--black-color)] font-medium'>{t('vehicleDetails')}</p>
