@@ -81,7 +81,7 @@ export default function AuditLogs() {
 
                 <Table
                     columns={['performedByWord', 'actionWord', 'dateWord', 'roleWord', 'profileWord']}
-                    data={data?.slice(0, 10)}
+                    data={data}
                     isLoading={isLoading}
                     isError={error}
                     emptyMessage="noAdultLogsYet"
