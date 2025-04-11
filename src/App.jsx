@@ -13,7 +13,7 @@ import OfficerProfile from './Pages/Officers/OfficerProfile';
 import Reports from './Pages/Reports/Reports';
 import ReportDetails from './Pages/Reports/ReportDetails';
 import OwnerDetails from './Pages/Vehicle-Management/OwnerDetails';
-import AdultLogs from './Pages/Logs/AdultLogs';
+import AuditLogs from './Pages/Audit-Logs/AuditLogs';
 
 const routes = createBrowserRouter([
 
@@ -37,7 +37,7 @@ const routes = createBrowserRouter([
             {path: '/V-Reports/report/:id', element: <ReportDetails />}
         ]},
 
-        {path: '/adult-logs', element: <AdultLogs />},
+        {path: '/adult-logs', element: <AuditLogs />},
 
     ]},
 
