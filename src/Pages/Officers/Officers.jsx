@@ -60,7 +60,7 @@ export default function Officers() {
 
     }, [filters, data]);
 
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedOfficer, setSelectedOfficer] = useState(null);
 
     const handleBanClick = (officer) => {
