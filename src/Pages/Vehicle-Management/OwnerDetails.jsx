@@ -77,7 +77,7 @@ export default function OwnerDetails() {
 
                 <div className="w-full flex items-center gap-2.5 text-[var(--blue-color)]">
                     <FaRegAddressCard className='text-3xl'/>
-                    <h3 className='text-2xl font-semibold'>{t('Owner License')}</h3>
+                    <h3 className='text-2xl font-semibold'>{t('drivingLicense')}</h3>
                 </div>
 
                 <div className='w-full grid grid-cols-2 gap-2.5 max-[800px]:grid-cols-1'>
@@ -97,7 +97,7 @@ export default function OwnerDetails() {
 
                 <div className="w-full flex items-center gap-2.5 text-[var(--blue-color)]">
                     <IoCarSportOutline className='text-3xl'/>
-                    <h3 className='text-2xl font-semibold'>{t('Vehicle License')}</h3>
+                    <h3 className='text-2xl font-semibold'>{t('vehicleLicense')}</h3>
                 </div>
 
                 <div className='w-full grid grid-cols-2 gap-2.5 max-[800px]:grid-cols-1'>

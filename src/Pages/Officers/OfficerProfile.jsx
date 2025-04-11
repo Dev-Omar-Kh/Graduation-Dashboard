@@ -151,7 +151,7 @@ export default function OfficerProfile() {
                         shadow-[0_0px_10px_var(--gray-color-3)] overflow-hidden
                     '>
 
-                        <div className='w-full p-5 flex flex-wrap items-center justify-between gap-5'>
+                        <div className='w-full p-5 pb-0 flex flex-wrap items-center justify-between gap-5'>
 
                             <h3 className='text-2xl font-semibold text-[black-color]'> {t('violationsWord')} </h3>
 
