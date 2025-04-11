@@ -69,17 +69,17 @@ export default function SideBar({setDisplayNan}) {
 
             <div className='w-full flex items-center justify-center pb-2.5 max-[940px]:justify-between'>
 
-                <Link className='w-full flex items-center justify-center pb-2.5 max-[940px]:justify-between' to={'/'}>
+                <Link className='w-full flex items-center justify-center pb-2.5 max-[940px]:justify-between max-[940px]:w-fit' to={'/'}>
 
-                    <img 
-                        className='h-16 pointer-events-none max-[1120px]:hidden max-[940px]:inline' 
-                        src={logo} alt="logo" 
-                    />
-
-                    <img 
-                        className='hidden h-16 pointer-events-none max-[1120px]:inline max-[940px]:hidden' 
-                        src={miniLogo} alt="mini logo" 
-                    />
+                    <picture>
+                        <source media="(min-width: 1120px)" srcSet={logo} />
+                        <source media="(min-width: 940px)" srcSet={miniLogo} />
+                        <img 
+                            className='h-16 pointer-events-none' 
+                            src={logo} 
+                            alt="logo" 
+                        />
+                    </picture>
 
                 </Link>
 
@@ -90,16 +90,19 @@ export default function SideBar({setDisplayNan}) {
                         bg-[var(--gray-color-3)] max-[940px]:flex
                     '
                 >
-                    <IoClose className='text-3xl text-[var(--black-color)]' />
+                    <IoClose className='text-3xl text-[var(--blue-color)]' />
                 </div>
 
             </div>
 
-            <ul className='w-full py-5 flex flex-col gap-2.5'>
+            <ul className='
+                w-full h-[calc(100vh-7.125rem)] py-5 flex flex-col gap-2.5 overflow-y-auto
+                hidden_scroll
+            '>
 
                 {links.map(link => <li key={link.id} className='w-full'>
                     <NavLink to={link.link} onClick={() => setDisplayNan(false)} className='
-                        w-full py-2.5 px-5 flex items-center gap-2.5 
+                        w-full py-2.5 px-5 flex items-center gap-2.5
                         max-[1120px]:justify-center max-[940px]:justify-start
                         text-[var(--gray-color-2)] rounded-md text-base duration-300
                         hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
