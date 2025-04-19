@@ -22,7 +22,7 @@ export default function OfficerProfile() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedReport, setSelectedReport] = useState(null);
 
-    // ====== get-officer-vehicles ====== //
+    // ====== get-officer-data ====== //
 
     const getOfficerData = async() => {
         const {data} = await Axios.get(`${getAllOfficers}/${Number(id)}`);

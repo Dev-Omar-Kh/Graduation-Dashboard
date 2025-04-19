@@ -156,6 +156,26 @@
     "clearAuditLogTitle": "مسح سجل التعديل",
     "clearAuditLogMessage": "هل أنت متأكد أنك تريد حذف هذا السجل التعديلي؟ لا يمكن التراجع عن هذا الإجراء.",
 
-    "roleWord": "الدور"
+    "roleWord": "الدور",
+
+    "adminsWord": "المشرفين",
+    "adminsTitle": "إدارة المشرفين",
+    "adminsSlogan": "إدارة ومراقبة المشرفين",
+    "addAdminWord": "إضافة مشرف",
+
+    "allRolesWord": "جميع الأدوار",
+
+    "adminWord": "المشرف",
+
+    "banAdminTitle": "حظر المشرف",
+    "banAdminMessage": "هل أنت متأكد أنك تريد حظر هذا المشرف؟ لا يمكن التراجع عن هذا الإجراء.",
+    "noAdminsYet": "لا يوجد مشرفين مسجلين حتى الآن",
+
+    "adminProfileWord": "ملف المشرف",
+
+    "passwordWord": "كلمة المرور",
+    "loginWord": "تسجيل الدخول",
+    "usernamePlaceholder": "ادخل اسم المستخدم",
+    "passwordPlaceholder": "ادخل كلمة المرور"
 
 }

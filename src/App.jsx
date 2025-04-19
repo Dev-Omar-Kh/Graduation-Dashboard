@@ -14,6 +14,8 @@ import Reports from './Pages/Reports/Reports';
 import ReportDetails from './Pages/Reports/ReportDetails';
 import OwnerDetails from './Pages/Vehicle-Management/OwnerDetails';
 import AuditLogs from './Pages/Audit-Logs/AuditLogs';
+import Admins from './Pages/Admins/Admins';
+import AdminProfile from './Pages/Admins/AdminProfile';
 
 const routes = createBrowserRouter([
 
@@ -24,6 +26,11 @@ const routes = createBrowserRouter([
         {path: '/officers', element: <SubLayout />, children: [
             {path: '/officers', element: <Officers />},
             {path: '/officers/profile/:id', element: <OfficerProfile />},
+        ]},
+
+        {path: '/admins', element: <SubLayout />, children: [
+            {path: '/admins', element: <Admins />},
+            {path: '/admins/profile/:id', element: <AdminProfile />},
         ]},
 
         {path: '/V-Management', element: <SubLayout />, children: [

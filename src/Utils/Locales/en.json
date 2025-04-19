@@ -28,7 +28,7 @@
     "actionsWord": "Actions",
 
     "officersTitle": "Officers Management",
-    "officersSlogan": "Manage and monitor officer activities",
+    "officersSlogan": "Manage and monitor officers activities",
     "officerWord": "Officer",
     "rankWord": "Rank",
     "allRanksWord": "All Ranks",
@@ -157,6 +157,26 @@
     "clearAuditLogTitle": "Clear Audit Log",
     "clearAuditLogMessage": "Are you sure you want to clear this audit log? This action cannot be undone.",
 
-    "roleWord": "Role"
+    "roleWord": "Role",
+
+    "adminsWord": "Admins",
+    "adminsTitle": "Admins Management",
+    "adminsSlogan": "Manage and monitor admins activities",
+    "addAdminWord": "Add Admin",
+
+    "allRolesWord": "All Roles",
+
+    "adminWord": "Admin",
+
+    "banAdminTitle": "Ban Admin",
+    "banAdminMessage": "Are you sure you want to Ban this admin? This action cannot be undone.",
+    "noAdminsYet": "No Admins Yet",
+
+    "adminProfileWord": "Admin Profile",
+
+    "passwordWord": "Password",
+    "loginWord": "Login",
+    "usernamePlaceholder": "Enter your username",
+    "passwordPlaceholder": "Enter your password"
 
 }

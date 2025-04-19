@@ -46,8 +46,8 @@ export default function Translate({setDisplayNan}) {
     const changeLanguage = (lang) => {
 
         i18n.changeLanguage(lang);
-        setDisplayNan(false);
         localStorage.setItem('language', lang);
+        setDisplayNan(false);
 
         setTimeout(() => {
             setDisplayLangs(false);

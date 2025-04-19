@@ -8,6 +8,7 @@ export const Axios = axios.create({
 
 export const getAllHomeData = '/home';
 export const getAllOfficers = '/officers';
+export const getAllAdmins = '/admins';
 export const getAllVehicles = '/vehiclesData';
 export const getAllReports = '/reports';
 export const getAllOwners = '/ownersData';

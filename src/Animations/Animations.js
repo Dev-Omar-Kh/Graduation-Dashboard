@@ -62,6 +62,12 @@ const Animations = {
         exit: { scale: 0.9, opacity: 0, transition: {...commonTransition} },
     },
 
+    opacityVariants: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: {...commonTransition} },
+        exit: { opacity: 0, transition: {...commonTransition} },
+    },
+
 };
 
 export default Animations;

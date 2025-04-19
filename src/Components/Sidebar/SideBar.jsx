@@ -4,13 +4,15 @@ import { GoHome } from 'react-icons/go';
 import { IoCarSportOutline, IoClose, IoSettingsOutline, IoWarningOutline } from 'react-icons/io5';
 import { HiOutlineDocumentReport } from 'react-icons/hi';
 import { LuClipboardList, LuUsers } from 'react-icons/lu';
+import { MdOutlineAdminPanelSettings, MdOutlineLocalPolice } from "react-icons/md";
 import Translate from '../Translate-Btn/Translate';
+import { GiRank3 } from "react-icons/gi";
 import { useTranslation } from 'react-i18next';
+import { PropTypes } from 'prop-types';
 
 import logo from '../../assets/Images/logo.png'
 import miniLogo from '../../assets/Images/mini-logo.png';
 import myImg from '../../assets/Images/pfp.jpg'
-import { PropTypes } from 'prop-types';
 
 export default function SideBar({setDisplayNan}) {
 
@@ -26,18 +28,24 @@ export default function SideBar({setDisplayNan}) {
         },
 
         {
+            id: 4, 
+            icon: <MdOutlineLocalPolice className='text-xl max-[1120px]:text-2xl max-[940px]:text-xl' />, 
+            link: '/officers', 
+            title: t('officersWord')
+        },
+
+        {
+            id: 3, 
+            icon: <MdOutlineAdminPanelSettings className='text-xl max-[1120px]:text-2xl max-[940px]:text-xl' />, 
+            link: '/admins', 
+            title: t('adminsWord')
+        },
+
+        {
             id: 2,
             icon: <IoCarSportOutline className='text-xl max-[1120px]:text-2xl max-[940px]:text-xl' />,
             link: '/V-Management', 
             title: t('vehicleManagementWord')
-        },
-
-        
-        {
-            id: 4, 
-            icon: <LuUsers className='text-xl max-[1120px]:text-2xl max-[940px]:text-xl' />, 
-            link: '/officers', 
-            title: t('officersWord')
         },
 
         {
