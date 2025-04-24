@@ -154,7 +154,7 @@ export default function UpdateOfficer() {
                             cursor-pointer duration-300 hover:bg-[var(--blue-opacity-color)]
                         '
                     >
-                        {t('addWord')}
+                        {t('updateWord')}
                     </button>
 
                     <button 
