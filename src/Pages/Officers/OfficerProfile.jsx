@@ -12,7 +12,7 @@ import FullError from '../../Components/Error/FullError';
 import WarnPopUp from '../../Components/Pop-Up/WarnPopUp';
 import Table from '../../Components/Table/Table';
 
-import officerImg from '../../assets/Images/officer.jpg';
+import officerImg from '../../assets/Images/officer_3.webp';
 import warningSVG from '../../assets/JSON/warning.json';
 
 export default function OfficerProfile() {

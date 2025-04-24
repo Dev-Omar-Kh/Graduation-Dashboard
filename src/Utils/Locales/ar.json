@@ -176,6 +176,26 @@
     "passwordWord": "كلمة المرور",
     "loginWord": "تسجيل الدخول",
     "usernamePlaceholder": "ادخل اسم المستخدم",
-    "passwordPlaceholder": "ادخل كلمة المرور"
+    "passwordPlaceholder": "ادخل كلمة المرور",
+
+    "uploadImageWord": "اضف صورة",
+    "updateImageWord": "تحديث الصورة",
+    "officerNameWord": "اسم الضابط",
+    "officerNamePlaceholder": "ادخل اسم الضابط",
+    "officerUsernamePlaceholder": "ادخل اسم المستخدم للضابط",
+    "badgeNumberWord": "رقم الشارة",
+    "badgeNumberPlaceholder": "ادخل رقم شارة الضابط",
+    "chooseOfficerRankWord": "رتبة الضابط",
+    "chooseOfficerRankPlaceholder": "اختر رتبة الضابط من القائمة",
+    "noOptionsMatched": "لا توجد خيارات مطابقة",
+    "phoneNumberWord": "رقم الهاتف",
+    "phoneNumberPlaceholder": "ادخل رقم هاتف الضابط",
+    "serviceLocationWord": "موقع الخدمة",
+    "serviceLocationPlaceholder": "اختر موقع الخدمة من القائمة",
+    "confirmOfficerPasswordWord": "تأكيد كلمة المرور",
+    "confirmOfficerPasswordPlaceholder": "تأكيد كلمة مرور الضابط",
+    "addWord": "إضافة",
+
+    "updateOfficerDataWord": "تحديث بيانات الضابط"
 
 }

@@ -16,6 +16,8 @@ import OwnerDetails from './Pages/Vehicle-Management/OwnerDetails';
 import AuditLogs from './Pages/Audit-Logs/AuditLogs';
 import Admins from './Pages/Admins/Admins';
 import AdminProfile from './Pages/Admins/AdminProfile';
+import AddOfficer from './Pages/Officers/Officers-Actions/AddOfficer';
+import UpdateOfficer from './Pages/Officers/Officers-Actions/UpdateOfficer';
 
 const routes = createBrowserRouter([
 
@@ -26,6 +28,8 @@ const routes = createBrowserRouter([
         {path: '/officers', element: <SubLayout />, children: [
             {path: '/officers', element: <Officers />},
             {path: '/officers/profile/:id', element: <OfficerProfile />},
+            {path: '/officers/add-new-officer', element: <AddOfficer />},
+            {path: '/officers/update-officer-data/:id', element: <UpdateOfficer />},
         ]},
 
         {path: '/admins', element: <SubLayout />, children: [

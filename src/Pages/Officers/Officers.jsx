@@ -94,7 +94,7 @@ export default function Officers() {
                     <p className='pt-0.5 text-base text-[var(--gray-color-2)]'>{t('officersSlogan')}</p>
                 </div>
 
-                <Link className='
+                <Link to={'add-new-officer'} className='
                     px-5 py-2.5 flex items-center gap-2.5 rounded-md bg-[var(--blue-color)]
                     text-base text-[var(--white-color)] font-medium cursor-pointer
                 '>
@@ -194,11 +194,11 @@ export default function Officers() {
                     )}
                     onActionClick={(officer) => (
                         <div className='flex items-center justify-center gap-2.5'>
-                            <button className='
+                            <Link to={`update-officer-data/${officer.id}`} className='
                                 p-2.5 rounded-md bg-[var(--gray-color-3)]
                                 text-[var(--blue-color)] cursor-pointer duration-300
                                 hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
-                            '><FiEdit /></button>
+                            '><FiEdit /></Link>
 
                             <button 
                                 onClick={() => handleBanClick(officer)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../Components/Input/Input';
+import Input from '../Components/Inputs/Manual-Inputs/Input';
 import Translate from '../Components/Translate-Btn/Translate';
 import { useTranslation } from 'react-i18next';
 

@@ -177,6 +177,26 @@
     "passwordWord": "Password",
     "loginWord": "Login",
     "usernamePlaceholder": "Enter your username",
-    "passwordPlaceholder": "Enter your password"
+    "passwordPlaceholder": "Enter your password",
+
+    "uploadImageWord": "Upload Image",
+    "updateImageWord": "Update Image",
+    "officerNameWord": "Officer Name",
+    "officerNamePlaceholder": "Enter officer name",
+    "officerUsernamePlaceholder": "Enter officer username",
+    "badgeNumberWord": "Badge Number",
+    "badgeNumberPlaceholder": "Enter officer badge number",
+    "chooseOfficerRankWord": "Officer rank",
+    "chooseOfficerRankPlaceholder": "Choose officer rank from the list",
+    "noOptionsMatched": "No options matched",
+    "phoneNumberWord": "Phone Number",
+    "phoneNumberPlaceholder": "Enter officer phone number",
+    "serviceLocationWord": "Service Location",
+    "serviceLocationPlaceholder": "Choose service location from the list",
+    "confirmOfficerPasswordWord": "Confirm Password",
+    "confirmOfficerPasswordPlaceholder": "Confirm officer password",
+    "addWord": "Add",
+
+    "updateOfficerDataWord": "Update Officer Data"
 
 }
