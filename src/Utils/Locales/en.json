@@ -179,6 +179,7 @@
     "usernamePlaceholder": "Enter your username",
     "passwordPlaceholder": "Enter your password",
 
+    "loadingInputMsg": "Loading ...",
     "uploadImageWord": "Upload Image",
     "updateImageWord": "Update Image",
     "officerNameWord": "Officer Name",
@@ -198,6 +199,23 @@
     "addWord": "Add",
     "updateWord": "Update",
 
-    "updateOfficerDataWord": "Update Officer Data"
+    "updateOfficerDataWord": "Update Officer Data",
+
+    "adminNameWord": "Admin Name",
+    "adminNamePlaceholder": "Enter admin name",
+    "adminUsernamePlaceholder": "Enter admin username",
+    "chooseAdminRoleWord": "Choose admin role",
+    "chooseAdminRolePlaceholder": "Choose admin role from the list",
+
+    "updateAdminDataWord": "Update Admin Data",
+
+    "plateNumberPlaceholder": "Enter plate number",
+    "addNotesWord": "Add Notes",
+    "addNotesPlaceholder": "Add notes about the violation",
+    "violationTypePlaceholder": "Choose violation type from the list",
+    "violationLocationPlaceholder": "Choose violation location from the list",
+    "violationOfficerPlaceholder": "Choose officer from the list",
+    "statusPlaceholder": "Choose status from the list",
+    "updateViolationDataWord": "Update Violation Data"
 
 }

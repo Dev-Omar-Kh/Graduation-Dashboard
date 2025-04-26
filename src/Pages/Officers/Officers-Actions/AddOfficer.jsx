@@ -6,6 +6,7 @@ import { MdOutlineAddModerator } from 'react-icons/md';
 import ImgInput from '../../../Components/Inputs/Images-Input/ImgInput';
 import ListInput from '../../../Components/Inputs/List-Input/ListInput';
 import { useFormik } from 'formik';
+import { OfficerValidationSchema } from './OfficerValidation';
 
 // import pfpImg from '../../../assets/Images/officer.jpg';
 
@@ -27,15 +28,21 @@ export default function AddOfficer() {
         confirmPassword: ''
     }
 
+    // ======= handle-form-submit ======= //
+
     const handleSubmit = (values) => {
         console.log(values);
     }
+
+    // ======= handle-formik ======= //
 
     const formikObj = useFormik({
     
         initialValues: values,
 
         onSubmit: handleSubmit,
+
+        validationSchema: OfficerValidationSchema(t),
 
         enableReinitialize: true,
 
@@ -137,25 +144,29 @@ export default function AddOfficer() {
                         onBlur={formikObj.handleBlur}
                     />
 
-                    <button 
-                        type='submit' 
-                        className='
-                            w-full h-10 rounded-md bg-[var(--blue-color)] text-base font-medium text-[var(--white-color)]
-                            cursor-pointer duration-300 hover:bg-[var(--blue-opacity-color)]
-                        '
-                    >
-                        {t('addWord')}
-                    </button>
+                    <div className='col-span-2 grid grid-cols-2 gap-2.5 max-[785px]:grid-cols-1 max-[785px]:col-span-1'>
 
-                    <button 
-                        type='submit' 
-                        className='
-                            w-full h-10 rounded-md bg-[var(--gray-color)] 
-                            text-base font-medium text-[var(--white-color)] cursor-pointer
-                        '
-                    >
-                        {t('cancelWord')}
-                    </button>
+                        <button 
+                            type='submit' 
+                            className='
+                                w-full h-10 rounded-md bg-[var(--blue-color)] text-base font-medium text-[var(--white-color)]
+                                cursor-pointer duration-300 hover:bg-[var(--blue-opacity-color)]
+                            '
+                        >
+                            {t('addWord')}
+                        </button>
+
+                        <button 
+                            type='submit' 
+                            className='
+                                w-full h-10 rounded-md bg-[var(--gray-color)] 
+                                text-base font-medium text-[var(--white-color)] cursor-pointer
+                            '
+                        >
+                            {t('cancelWord')}
+                        </button>
+
+                    </div>
 
                 </form>
 

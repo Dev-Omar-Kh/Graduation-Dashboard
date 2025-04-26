@@ -101,7 +101,7 @@ export default function VehicleM() {
                     <p className='pt-0.5 text-base text-[var(--gray-color-2)]'>{t('vmSlogan')}</p>
                 </div>
 
-                <Link className='
+                <Link to={'add-violation'} className='
                     px-5 py-2.5 flex items-center gap-2.5 rounded-md bg-[var(--blue-color)]
                     text-base text-[var(--white-color)] font-medium cursor-pointer
                 '>
@@ -195,7 +195,7 @@ export default function VehicleM() {
                                 border-solid border-[var(--gray-color-1)] p-2.5 whitespace-nowrap
                             `}>
                                 <Link 
-                                    to={`vehicle/${vehicle.id}`}
+                                    to={`violation/${vehicle.id}`}
                                     className='flex items-center justify-center gap-1 cursor-pointer text-[var(--blue-color)]'
                                 >
                                     <p>{t('expandWord')}</p>
@@ -208,11 +208,11 @@ export default function VehicleM() {
                     onActionClick={(vehicle) => (
                         <div className='flex items-center justify-center gap-2.5'>
 
-                            <button className='
+                            <Link to={`update-violation-data/${vehicle.id}`} className='
                                 p-2.5 rounded-md bg-[var(--gray-color-3)]
                                 text-[var(--blue-color)] cursor-pointer duration-300
                                 hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
-                            '><FiEdit /></button>
+                            '><FiEdit /></Link>
 
                             <button 
                                 onClick={() => handleBanClick(vehicle)}

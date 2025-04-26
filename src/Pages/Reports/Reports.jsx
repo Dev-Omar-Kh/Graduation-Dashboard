@@ -5,12 +5,10 @@ import { RiAlarmWarningLine } from "react-icons/ri";
 import { MdOutlineFilterList } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
-import { FiEdit } from 'react-icons/fi';
+import { BiCommentDetail } from "react-icons/bi";
 import { IoBanSharp } from 'react-icons/io5';
 import { Axios, getAllReports } from '../../API/API';
 import { useQuery } from '@tanstack/react-query';
-import TableLoading from '../../Components/Tables-Status/TableLoading';
-import TableError from '../../Components/Tables-Status/TableError';
 import WarnPopUp from '../../Components/Pop-Up/WarnPopUp';
 import Table from '../../Components/Table/Table';
 
@@ -210,7 +208,7 @@ export default function Reports() {
                                 p-2.5 rounded-md bg-[var(--gray-color-3)]
                                 text-[var(--blue-color)] cursor-pointer duration-300
                                 hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
-                            '><FiEdit /></button>
+                            '><BiCommentDetail /></button>
 
                             <button 
                                 onClick={() => handleBanClick(report)}

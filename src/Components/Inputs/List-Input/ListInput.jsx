@@ -74,7 +74,7 @@ export default function ListInput({ id, label, placeHolder, options, onSelect, o
                 ref={inputRef}
                 className={`
                     w-full h-10 px-2.5 rounded-md border border-solid 
-                    ${i18n.language === 'en' ? 'pr-10.5' : 'pl-10.5'}
+                    ${i18n.language === 'en' ? 'pr-10.5' : 'pl-10.5'} placeholder:text-[var(--gray-color)]
                     ${searchTerm ? 'border-[var(--blue-color)]' : 'border-[var(--gray-color-2)]'}
                     outline-0 duration-300 focus:border-[var(--blue-color)] text-base font-medium text-[var(--black-color)]
                 `}

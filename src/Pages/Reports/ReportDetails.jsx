@@ -6,7 +6,7 @@ import { HiOutlineDocumentReport } from 'react-icons/hi';
 import { LuClipboardList } from 'react-icons/lu';
 import { Axios, getAllReports } from '../../API/API';
 import { useQuery } from '@tanstack/react-query';
-import DetailsLoading from '../Vehicle-Management/DetailsLoading';
+import DetailsLoading from '../Violations-Management/DetailsLoading';
 import FullError from '../../Components/Error/FullError';
 
 export default function ReportDetails() {

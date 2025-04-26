@@ -1,77 +1,63 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Link, useParams } from 'react-router-dom';
-import Input from '../../../Components/Inputs/Manual-Inputs/Input';
-import ImgInput from '../../../Components/Inputs/Images-Input/ImgInput';
-import ListInput from '../../../Components/Inputs/List-Input/ListInput';
-import { FiEdit } from 'react-icons/fi';
 import { useFormik } from 'formik';
-import { Axios, getAllOfficers } from '../../../API/API';
-import { useQuery } from '@tanstack/react-query';
-import { OfficerValidationSchema } from './OfficerValidation';
-import FullError from '../../../Components/Error/FullError';
+import React from 'react'
+import { useTranslation } from 'react-i18next';
+import { MdOutlineAddModerator } from 'react-icons/md';
+import { Link } from 'react-router-dom'
+import ImgInput from '../../../Components/Inputs/Images-Input/ImgInput';
+import Input from '../../../Components/Inputs/Manual-Inputs/Input';
+import ListInput from '../../../Components/Inputs/List-Input/ListInput';
+import { AdminValidationSchema } from './AdminValidation';
 
-export default function UpdateOfficer() {
+export default function AddAdmin() {
 
     const {t} = useTranslation();
-    const {id} = useParams();
-
-    // ======= get-officer-data-by-id ======= //
-
-    const getOfficerData = async() => {
-        const {data} = await Axios.get(`${getAllOfficers}/${Number(id)}`);
-        return data
-    }
-
-    const {data, isLoading, isError} = useQuery({queryKey: ["getDataOfficer", id], queryFn: getOfficerData});
 
     // ======= handle-form-values ======= //
 
     const values = {
-        img_profile: data?.img_profile || '',
-        name: data?.name || '',
-        username: data?.username || '',
-        badgeNumber: data?.badgeNum || '',
-        phoneNumber: data?.phoneNumber || '',
-        rank: data?.rank || '',
-        location: data?.location || '',
+        img_profile: '',
+        name: '',
+        username: '',
+        role: '',
         password: '',
         confirmPassword: ''
     }
 
+    // ======= handle-form-submit ======= //
+    
     const handleSubmit = (values) => {
         console.log(values);
     }
 
-    const formikObj = useFormik({
+    // ======= handle-formik ======= //
 
+    const formikObj = useFormik({
+    
         initialValues: values,
 
         onSubmit: handleSubmit,
 
-        validationSchema: OfficerValidationSchema(t),
+        validationSchema: AdminValidationSchema(t),
 
         enableReinitialize: true,
 
     });
-
-    if(isError) return <FullError />
 
     return <React.Fragment>
 
         <section className='w-full flex flex-col gap-5'>
 
             <div className='w-full flex flex-wrap items-center gap-1'>
-                <Link to={'/officers'} className='text-[var(--gray-color-2)] font-medium'>{t('officersTitle')}</Link>
+                <Link to={'/admins'} className='text-[var(--gray-color-2)] font-medium'>{t('adminsTitle')}</Link>
                 <span className='text-2xl text-[var(--gray-color-2)] font-medium'>/</span>
-                <p className='text-[var(--black-color)] font-medium'>{t('updateOfficerDataWord')}</p>
+                <p className='text-[var(--black-color)] font-medium'>{t('addAdminWord')}</p>
             </div>
 
             <div className='w-full p-5 flex flex-col gap-5 rounded-md bg-[var(--white-color)] shadow-[0_0px_10px_var(--gray-color-3)]'>
 
                 <div className="w-full flex items-center gap-2.5 text-[var(--blue-color)]">
-                    <FiEdit className='text-3xl' />
-                    <h3 className='text-2xl font-semibold'>{t('updateOfficerDataWord')}</h3>
+                    <MdOutlineAddModerator className='text-3xl' />
+                    <h3 className='text-2xl font-semibold'>{t('addAdminWord')}</h3>
                 </div>
 
                 <form onSubmit={formikObj.handleSubmit} className='w-full grid grid-cols-2 gap-2.5 max-[785px]:grid-cols-1'>
@@ -82,7 +68,7 @@ export default function UpdateOfficer() {
                             src={formikObj.values.img_preview} alt="pfpImg" 
                         />}
                         <ImgInput 
-                            label={'updateImageWord'} value={formikObj.values.img_profile} 
+                            label={'uploadImageWord'} value={formikObj.values.img_profile} 
                             onChange={(event) => {
                                 const file = event.target.files[0];
                                 if (file) {
@@ -96,46 +82,24 @@ export default function UpdateOfficer() {
                     </div>
 
                     <Input 
-                        id={'name'} label={'officerNameWord'} type={'text'} password={false}
-                        loading={true} placeHolder={isLoading ? 'loadingInputMsg' : 'officerNamePlaceholder'}
+                        id={'name'} label={'adminNameWord'} type={'text'} password={false}
+                        loading={true} placeHolder={'adminNamePlaceholder'}
                         onChange={formikObj.handleChange} value={formikObj.values.name}
                         onBlur={formikObj.handleBlur}
                     />
 
                     <Input 
                         id={'username'} label={'usernameWord'} type={'text'} password={false}
-                        loading={true} placeHolder={isLoading ? 'loadingInputMsg' : 'officerUsernamePlaceholder'}
+                        loading={true} placeHolder={'adminUsernamePlaceholder'}
                         onChange={formikObj.handleChange} value={formikObj.values.username}
                         onBlur={formikObj.handleBlur}
                     />
 
-                    <Input 
-                        id={'badgeNumber'} label={'badgeNumberWord'} type={'text'} password={false}
-                        loading={true} placeHolder={isLoading ? 'loadingInputMsg' : 'badgeNumberPlaceholder'}
-                        onChange={formikObj.handleChange} value={formikObj.values.badgeNumber}
-                        onBlur={formikObj.handleBlur}
-                    />
-
-                    <Input 
-                        id={'phoneNumber'} label={'phoneNumberWord'} type={'text'} password={false}
-                        loading={true} placeHolder={isLoading ? 'loadingInputMsg' : 'phoneNumberPlaceholder'}
-                        onChange={formikObj.handleChange} value={formikObj.values.phoneNumber}
-                        onBlur={formikObj.handleBlur}
-                    />
-
                     <ListInput 
-                        id={'rank'} label={'chooseOfficerRankWord'}
-                        placeHolder={isLoading ? 'loadingInputMsg' : 'chooseOfficerRankPlaceholder'}
-                        options={["Molemn", "Sergeant", "Lieutenant", "Captain", "Major", "Colonel", "General", "Brigadier"]}
-                        onChange={formikObj.handleChange} value={formikObj.values.rank}
-                        onBlur={formikObj.handleBlur}
-                    />
-
-                    <ListInput 
-                        id={'location'} label={'serviceLocationWord'}
-                        placeHolder={isLoading ? 'loadingInputMsg' : 'serviceLocationPlaceholder'}
-                        options={["Molemn", "Sergeant", "Lieutenant", "Captain", "Major", "Colonel", "General", "Brigadier"]}
-                        onChange={formikObj.handleChange} value={formikObj.values.location}
+                        id={'role'} label={'chooseAdminRoleWord'}
+                        placeHolder={'chooseAdminRolePlaceholder'}
+                        options={["Super Admin", "Admin"]}
+                        onChange={formikObj.handleChange} value={formikObj.values.role}
                         onBlur={formikObj.handleBlur}
                     />
 

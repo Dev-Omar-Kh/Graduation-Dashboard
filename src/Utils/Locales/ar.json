@@ -178,6 +178,7 @@
     "usernamePlaceholder": "ادخل اسم المستخدم",
     "passwordPlaceholder": "ادخل كلمة المرور",
 
+    "loadingInputMsg": "جار التحميل ...",
     "uploadImageWord": "اضف صورة",
     "updateImageWord": "تحديث الصورة",
     "officerNameWord": "اسم الضابط",
@@ -197,6 +198,23 @@
     "addWord": "إضافة",
     "updateWord": "تحديث",
 
-    "updateOfficerDataWord": "تحديث بيانات الضابط"
+    "updateOfficerDataWord": "تحديث بيانات الضابط",
+
+    "adminNameWord": "اسم المشرف",
+    "adminNamePlaceholder": "ادخل اسم المشرف",
+    "adminUsernamePlaceholder": "ادخل اسم المستخدم للمشرف",
+    "chooseAdminRoleWord": "اختر دور المشرف",
+    "chooseAdminRolePlaceholder": "اختر دور المشرف من القائمة",
+
+    "updateAdminDataWord": "تحديث بيانات المشرف",
+
+    "plateNumberPlaceholder": "ادخل رقم اللوحة",
+    "addNotesWord": "اضف ملاحظات",
+    "addNotesPlaceholder": "اضف ملاحظات حول المخالفة",
+    "violationTypePlaceholder": "اختر نوع المخالفة من القائمة",
+    "violationLocationPlaceholder": "اختر موقع المخالفة من القائمة",
+    "violationOfficerPlaceholder": "اختر الضابط من القائمة",
+    "statusPlaceholder": "اختر الحالة من القائمة",
+    "updateViolationDataWord": "تحديث بيانات المخالفة"
 
 }

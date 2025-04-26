@@ -3,21 +3,25 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainLayout from './Layouts/MainLayout';
 import Home from './Pages/Home/Home';
 import Officers from './Pages/Officers/Officers';
-import VehicleM from './Pages/Vehicle-Management/VehicleM';
+import Violations from './Pages/Violations-Management/Violations';
 import { useTranslation } from 'react-i18next';
 import Login from './Authentication/Login';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import SubLayout from './Layouts/SubLayout';
-import VehicleDetails from './Pages/Vehicle-Management/VehicleDetails';
+import ViolationDetails from './Pages/Violations-Management/ViolationDetails';
 import OfficerProfile from './Pages/Officers/OfficerProfile';
 import Reports from './Pages/Reports/Reports';
 import ReportDetails from './Pages/Reports/ReportDetails';
-import OwnerDetails from './Pages/Vehicle-Management/OwnerDetails';
+import OwnerDetails from './Pages/Violations-Management/OwnerDetails';
 import AuditLogs from './Pages/Audit-Logs/AuditLogs';
 import Admins from './Pages/Admins/Admins';
 import AdminProfile from './Pages/Admins/AdminProfile';
 import AddOfficer from './Pages/Officers/Officers-Actions/AddOfficer';
 import UpdateOfficer from './Pages/Officers/Officers-Actions/UpdateOfficer';
+import AddAdmin from './Pages/Admins/Admins-Actions/AddAdmin';
+import UpdateAdmin from './Pages/Admins/Admins-Actions/UpdateAdmin';
+import AddViolation from './Pages/Violations-Management/Violations-Actions/AddViolation';
+import UpdateViolation from './Pages/Violations-Management/Violations-Actions/UpdateViolation';
 
 const routes = createBrowserRouter([
 
@@ -34,13 +38,17 @@ const routes = createBrowserRouter([
 
         {path: '/admins', element: <SubLayout />, children: [
             {path: '/admins', element: <Admins />},
+            {path: '/admins/add-admin', element: <AddAdmin />},
+            {path: '/admins/update-admin-data/:id', element: <UpdateAdmin />},
             {path: '/admins/profile/:id', element: <AdminProfile />},
         ]},
 
         {path: '/V-Management', element: <SubLayout />, children: [
-            {path: '/V-Management', element: <VehicleM />},
-            {path: '/V-Management/vehicle/:id', element: <VehicleDetails />},
-            {path: '/V-Management/vehicle/:id/car-owner/:ownerId', element: <OwnerDetails />}
+            {path: '/V-Management', element: <Violations />},
+            {path: '/V-Management/violation/:id', element: <ViolationDetails />},
+            {path: '/V-Management/add-violation', element: <AddViolation />},
+            {path: '/V-Management/update-violation-data/:id', element: <UpdateViolation />},
+            {path: '/V-Management/violation/:id/car-owner/:ownerId', element: <OwnerDetails />}
         ]},
 
         {path: '/V-Reports', element: <SubLayout />, children: [

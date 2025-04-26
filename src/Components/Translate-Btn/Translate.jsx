@@ -95,6 +95,7 @@ export default function Translate({setDisplayNan}) {
                             w-full px-5 py-2.5 flex items-center gap-2.5 cursor-pointer duration-300 
                             max-[1120px]:justify-center max-[940px]:justify-start
                             text-[var(--gray-color-2)] hover:bg-[var(--blue-color)] hover:text-[var(--white-color)]
+                            last:border-none border-b-[1px] border-[var(--gray-color-3)]
                             ${i18n.language === language.lang ? 'bg-[var(--blue-color)] text-[var(--white-color)]' : ''}
                         `}
                         onClick={() => changeLanguage(language.lang)}
